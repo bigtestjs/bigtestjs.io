@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:7.10
-    working_directory: ~/repo
+    working_directory: ~/bigtest.js.org
     steps:
       - checkout
       - restore_cache:
@@ -15,12 +15,15 @@ jobs:
             - ~/.yarn
             - ~/.cache/yarn
             - vendor/bundle
+      - run:
+          name: Configure git
+          command: |
+            git config --global user.email "yesno@users.noreply.github.com"
+            git config --global user.name "yesno"
+            echo "machine github.com login yesno password $GITHUB_TOKEN" > ~/.netrc
       - deploy:
           name: Deploy to Production
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git config --global user.email "SamKeathley@users.noreply.github.com"
-              git config --global user.name "SamKeathley"
-              echo "machine github.com login SamKeathley password $GITHUB_TOKEN" > ~/.netrc
-              cd website && yarn install && GIT_USER=SamKeathley USE_SSH=true yarn run publish-gh-pages
+              cd website && yarn install && GIT_USER=yesno yarn run publish-gh-pages
             fi
