@@ -22,4 +22,4 @@ jobs:
           - git config --global user.email "SamKeathley@users.noreply.github.com"
           - git config --global user.name "SamKeathley"
           - echo "machine github.com login SamKeathley password $GITHUB_TOKEN" > ~/.netrc
-          - cd website && npm install && GIT_USER=SamKeathley USE_SSH=true npm run publish-gh-pages
+          - cd website && yarn install && GIT_USER=SamKeathley USE_SSH=true yarn run publish-gh-pages

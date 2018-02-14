@@ -17,7 +17,7 @@ const users = [
 
 const siteConfig = {
   title: 'BigTest Site' /* title for your website */,
-  tagline: 'A website about testing',
+  tagline: 'A website about testing big for all projects',
   url: 'https://thefrontside.github.io' /* your website url */,
   baseUrl: '/bigtest.js.org/' /* base url for your project */,
   organizationName: 'thefrontside',
