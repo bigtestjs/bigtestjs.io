@@ -15,11 +15,12 @@ jobs:
             - ~/.yarn
             - ~/.cache/yarn
             - vendor/bundle
-    deployment:
-      website:
-        branch: master
-        commands:
-          - git config --global user.email "SamKeathley@users.noreply.github.com"
-          - git config --global user.name "SamKeathley"
-          - echo "machine github.com login SamKeathley password $GITHUB_TOKEN" > ~/.netrc
-          - cd website && yarn install && GIT_USER=SamKeathley USE_SSH=true yarn run publish-gh-pages
+      - deploy:
+          name: Deploy to Production
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git config --global user.email "SamKeathley@users.noreply.github.com"
+              git config --global user.name "SamKeathley"
+              echo "machine github.com login SamKeathley password $GITHUB_TOKEN" > ~/.netrc
+              cd website && yarn install && GIT_USER=SamKeathley USE_SSH=true yarn run publish-gh-pages
+            fi
