@@ -1,11 +1,6 @@
 version: 2
 jobs:
   build:
-    machine:
-      node:
-       version: 6.11.2
-      yarn:
-       version: 3.10.10
     docker:
       - image: circleci/node:7.10
     working_directory: ~/repo
