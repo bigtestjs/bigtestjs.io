@@ -1,5 +1,20 @@
 {
   "docs": {
-    "About BigTest": ["intro"]
+    "Getting Started": [
+      "installation",
+      "separating-side-effects",
+      "modeling-interactions"
+    ],
+    "API": [
+      "convergence",
+      "mocha",
+      "mirage"
+    ]
+  },
+  "About": {
+    "BigTest": [
+      "intro",
+      "examples"
+    ]
   }
 }

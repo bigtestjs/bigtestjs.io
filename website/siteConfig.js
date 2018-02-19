@@ -24,7 +24,8 @@ const siteConfig = {
   projectName: 'bigtest.js.org',
   noIndex: false,
   headerLinks: [
-    {doc: 'intro', label: 'Docs'},
+    {doc: 'intro', label: 'About'},
+    {doc: 'installation', label: 'Docs'},
     {page: 'help', label: 'Help'},
     { blog: false },
   ],
