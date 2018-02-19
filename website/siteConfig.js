@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* List of projects/orgs using your project for the users page */
-const users = [
-  {
-    caption: 'User1',
-    image: '/test-site/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
-];
+ const users = [
+   {
+     caption: "User1",
+     image: "/test-site/img/docusaurus.svg",
+     infoLink: "https://www.example.com",
+     pinned: true
+   }
+ ];
 
+/* List of projects/orgs using your project for the users page */
 const siteConfig = {
   title: 'BigTest Site' /* title for your website */,
   tagline: 'A website about BigTest and testing big for all projects',
@@ -24,21 +24,20 @@ const siteConfig = {
   projectName: 'bigtest.js.org',
   noIndex: false,
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'intro', label: 'Docs'},
     {page: 'help', label: 'Help'},
     { blog: false },
   ],
   users,
   cname: 'bigtest.js.org',
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: '',
+  footerIcon: '',
+  favicon: '',
   /* colors for website */
   colors: {
-    primaryColor: '#31ACE6',
-    secondaryColor: '#F5507C',
+    primaryColor: '#16325B',
+    secondaryColor: '#7E8B9F',
   },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
