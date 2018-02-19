@@ -30,6 +30,7 @@ const siteConfig = {
     { blog: false },
   ],
   users,
+  cname: 'bigtest.js.org',
   /* path to images for header/footer */
   headerIcon: 'img/docusaurus.svg',
   footerIcon: 'img/docusaurus.svg',
