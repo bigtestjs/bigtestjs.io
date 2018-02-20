@@ -35,11 +35,11 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started
-            </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
+            <a href={this.docUrl('intro.html', this.props.language)}>
               Guides
+            </a>
+            <a href={this.docUrl('installation.html', this.props.language)}>
+              Getting Started
             </a>
           </div>
           <div>
@@ -53,7 +53,7 @@ class Footer extends React.Component {
         </section>
 
         <section className="copyright">
-          &copy; {currentYear} THE FRONTSIDE, INC.
+          &copy; 2017 - {currentYear} THE FRONTSIDE, INC.
         </section>
       </footer>
     );

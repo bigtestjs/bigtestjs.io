@@ -1,5 +1,9 @@
 {
   "docs": {
+    "BigTest": [
+      "intro",
+      "examples"
+    ],
     "Getting Started": [
       "installation",
       "separating-side-effects",
@@ -9,12 +13,6 @@
       "convergence",
       "mocha",
       "mirage"
-    ]
-  },
-  "About": {
-    "BigTest": [
-      "intro",
-      "examples"
     ]
   }
 }

@@ -14,10 +14,6 @@ const GridBlock = CompLibrary.GridBlock;
 
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
-function imgUrl(img) {
-  return siteConfig.baseUrl + 'img/' + img;
-}
-
 function docUrl(doc, language) {
   return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
 }
@@ -50,12 +46,6 @@ const SplashContainer = props => (
   </div>
 );
 
-const Logo = props => (
-  <div className="projectLogo">
-    <img src={props.img_src} />
-  </div>
-);
-
 const ProjectTitle = props => (
   <h2 className="projectTitle">
     {siteConfig.title}
@@ -75,21 +65,32 @@ class HomeSplash extends React.Component {
   render() {
     let language = this.props.language || '';
     return (
-      <SplashContainer>
-        <Logo img_src={imgUrl('docusaurus.svg')} />
-        <div className="inner">
-          <ProjectTitle />
-          <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
-          </PromoSection>
+      <div className="homeContainer">
+        <div className="homeSplashFade">
+          <div className="wrapper homeWrapper">
+            <div className="projectLogo">
+              <img src={`${siteConfig.baseUrl}img/ghost-logo.png`} />
+            </div>
+            <div className="inner">
+              <h2 className="projectTitle">
+                {siteConfig.title}
+                <small>{siteConfig.tagline}</small>
+              </h2>
+              <div className="section promoSection">
+                <div className="promoRow">
+                  <div className="pluginRowBlock">
+                    <Button href={docUrl('examples.html', language)}>Examples</Button>
+                    <Button href={docUrl('installation.html', language)}>Get Started</Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </SplashContainer>
+      </div>
     );
   }
 }
-
 const Block = props => (
   <Container
     padding={['bottom', 'top']}
@@ -103,64 +104,12 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature One',
+        title: 'What is Bigtest?',
+        content: 'Gold Road clipper bring a spring upon her cable reef.',
       },
       {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-    ]}
-  </Block>
-);
-
-const FeatureCallout = props => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
-  </div>
-);
-
-const LearnHow = props => (
-  <Block background="light">
-    {[
-      {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Learn How',
-      },
-    ]}
-  </Block>
-);
-
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
-);
-
-const Description = props => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Description',
+        title: 'Why Use It?',
+        content: 'Mutiny Admiral of the Black run a shot across the bow.',
       },
     ]}
   </Block>
@@ -185,7 +134,7 @@ const Showcase = props => {
   return (
     <div className="productShowcaseSection paddingBottom">
       <h2>{"Who's Using This?"}</h2>
-      <p>This project is used by all these people</p>
+      <p>All These People Love BigTest</p>
       <div className="logos">{showcase}</div>
       <div className="more-users">
         <a className="button" href={pageUrl('users.html', props.language)}>
@@ -203,12 +152,8 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
-        <div className="mainContainer">
+        <div className="aboutContainer">
           <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
           <Showcase language={language} />
         </div>
       </div>

@@ -1,7 +1,21 @@
-/* your custom css */
+
+body, h1, h2 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.homeContainer {
+  background-image: url('/img/contact-background.png');
+}
+
+.aboutContainer {
+  background-color: #FFFFFF;
+  background-image: url('/img/F.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
-  
+
 }
 
 @media only screen and (min-width: 1024px) {

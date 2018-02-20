@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website about BigTest and testing big for all projects",
+    "tagline": "Making your application work since 2017.",
     "examples": "Examples",
     "intro": "Introduction",
     "convergence": "@bigtest/convergence",
@@ -12,12 +12,11 @@
     "installation": "Installation",
     "modeling-interactions": "Modeling Interactions",
     "separating-side-effects": "Separating Side Effects",
-    "About": "About",
     "Docs": "Docs",
     "Help": "Help",
+    "BigTest": "BigTest",
     "Getting Started": "Getting Started",
-    "API": "API",
-    "BigTest": "BigTest"
+    "API": "API"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
