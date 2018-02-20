@@ -48,10 +48,13 @@ const siteConfig = {
   // projectName: 'test-site', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'default',
+    theme: 'rainbow',
   },
   stylesheets: ['https://fonts.googleapis.com/css?family=Raleway'],
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
+  ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/facebook/test-site',
 };

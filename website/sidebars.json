@@ -10,6 +10,7 @@
       "modeling-interactions"
     ],
     "API": [
+      "interaction",
       "convergence",
       "mocha",
       "mirage"

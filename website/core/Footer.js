@@ -51,6 +51,9 @@ class Footer extends React.Component {
             <a href="https://frontside.io">The Frontside</a>
           </div>
         </section>
+        <section>
+          <i class="fab fa-twitter fa-2x"></i>
+        </section>
 
         <section className="copyright">
           &copy; 2017 - {currentYear} THE FRONTSIDE, INC.
