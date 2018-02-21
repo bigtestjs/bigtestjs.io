@@ -8,3 +8,6 @@ jobs:
       ignore: gh-pages
     steps:
       -run: echo "Skipping tests on gh-pages branch"
+      -run:
+        name: Lint packages
+        command: yarn lint
