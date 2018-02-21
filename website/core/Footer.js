@@ -28,6 +28,7 @@ class Footer extends React.Component {
               <img
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
                 alt={this.props.config.title}
+                className="growOnHover"
                 width="66"
                 height="58"
               />
