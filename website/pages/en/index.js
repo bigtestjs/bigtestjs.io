@@ -144,7 +144,6 @@ const Testimonials = props => (
       ]}
       layout="threeColumn"
     />
-    <div className="disclaimer"><font size="1">These are not real people or testimonials.</font></div>
   </Container>
 );
 
@@ -182,8 +181,8 @@ const Showcase = props => {
 
   return (
     <div className="productShowcaseSection">
-      <h2>{"Who's Using This?"}</h2>
-      <p>All These People Love BigTest</p>
+      <h2>{"Who's Using BigTest?"}</h2>
+      <p>People Who Can't Get Enough of a Great Thing</p>
       <div className="logos">{showcase}</div>
       <div className="more-users">
         <a className="button" href={pageUrl('users.html', props.language)}>
@@ -201,9 +200,12 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
+        <div className="styleBreak3"></div>
         <div className="aboutContainer">
           <Features />
+          <div className="styleBreak2"></div>
           <HowTo language={language} />
+          <div className="styleBreak"></div>
           <Showcase language={language} />
           <Testimonials />
         </div>

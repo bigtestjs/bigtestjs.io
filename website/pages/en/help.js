@@ -17,8 +17,7 @@ class Help extends React.Component {
   render() {
     const supportLinks = [
       {
-        content:
-          'Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)',
+        content:'Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)',
         title: 'Browse Docs',
       },
       {

@@ -4,7 +4,10 @@ body, h1, h2, .fixedHeaderContainer header h2  {
 
 .fixedHeaderContainer {
   min-height: 4em;
-  padding: 1em 0;
+  padding: 1.5em 0;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #000000;
+  background-color: #16325B;
 }
 
 .homeContainer {
@@ -34,38 +37,41 @@ body, h1, h2, .fixedHeaderContainer header h2  {
 }
 
 .howToSection .container {
+  padding-top: 3em;
   text-align: center;
   background-color: rgba(22, 50, 91, 0.5);
 }
-
 
 .howToSection .container h2 {
   text-align: center;
 }
 
-.productShowcaseSection {
+.productShowcaseSection, .testimonials {
   padding-top: 3em;
-  padding-bottom: 3em;
   background-color: rgba(126, 139, 159, 0.5);
 }
 
-.testimonials {
-  position: relative;
-  padding-top: 3em;
-  padding-bottom: 3em;
+.styleBreak, .styleBreak2, .styleBreak3 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #000000 inset;
+}
+
+.styleBreak {
+  background-color: rgba(126, 139, 159, 0.5);
+}
+
+.styleBreak2 {
+  background-color: rgba(22, 50, 91, 0.5);
+}
+
+.styleBreak3 {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .testimonials img {
   border-radius: 50%;
   height: auto;
-}
-
-.testimonials .disclaimer {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
 }
 
 .growOnHover {
@@ -79,6 +85,18 @@ body, h1, h2, .fixedHeaderContainer header h2  {
 pre code {
   border-left: none;
 }
+
+footer.nav-footer {
+  background: #7E8B9F;
+  box-shadow: 0 10px 10px -10px #000000 inset;
+  padding-bottom: 1em;
+}
+
+footer .sitemap {
+  padding-left: 8em;
+  margin-bottom: .5em;
+}
+
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 

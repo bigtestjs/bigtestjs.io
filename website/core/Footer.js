@@ -44,11 +44,11 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
+            <a href="https://twitter.com/thefrontside"><i className="fab fa-twitter"></i> Twitter</a>
           </div>
           <div>
             <h5>More</h5>
             <a href="https://github.com/thefrontside/bigtest#bigtest-"><i className="fab fa-github"></i> Github</a>
-            <a href="https://twitter.com/thefrontside"><i className="fab fa-twitter"></i> Twitter</a>
             <a href="https://fronstide.io">The Frontside</a>
           </div>
         </section>
