@@ -1,17 +1,83 @@
-
-body, h1, h2 {
+body, h1, h2, .fixedHeaderContainer header h2  {
   font-family: 'Raleway', sans-serif;
+}
+
+.fixedHeaderContainer {
+  min-height: 4em;
+  padding: 1em 0;
 }
 
 .homeContainer {
   background-image: url('/img/contact-background.png');
 }
 
-.aboutContainer {
-  background-color: #FFFFFF;
-  background-image: url('/img/F.png');
-  background-repeat: no-repeat;
-  background-position: center;
+.homeSplashFade {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.promoSection .promoRow .pluginRowBlock .pluginWrapper {
+  padding: 0 1.5em;
+}
+
+.aboutContainer .container {
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+
+.docMainWrapper {
+  padding-bottom: 1.5em;
+}
+
+.docs-prevnext .button {
+  margin: 0;
+}
+
+.howToSection .container {
+  text-align: center;
+  background-color: rgba(22, 50, 91, 0.5);
+}
+
+
+.howToSection .container h2 {
+  text-align: center;
+}
+
+.productShowcaseSection {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: rgba(126, 139, 159, 0.5);
+}
+
+.testimonials {
+  position: relative;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.testimonials img {
+  border-radius: 50%;
+  height: auto;
+}
+
+.testimonials .disclaimer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.growOnHover {
+  transition: transform 0.3s;
+}
+
+.growOnHover:hover {
+  transform: scale(1.2);
+}
+
+pre code {
+  border-left: none;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

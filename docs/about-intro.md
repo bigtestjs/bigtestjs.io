@@ -6,7 +6,7 @@ title: Introduction
 ## BigTest [![CircleCI](https://circleci.com/gh/thefrontside/bigtest/tree/master.svg?style=svg&circle-token=78c5d879b0ace4fe137c203bfc9ca20d732eb6e3)](https://circleci.com/gh/thefrontside/bigtest/tree/master)
 
 A Suite of JavaScript libraries and framework extensions to help you
-answer the question: _Does my application work in real life?_.
+answer the question: _Does my application work in real life?_
 
 It's a big question, and it can't be answered with small tests that
 observe a tiny portion of your code that isn't integrated with any

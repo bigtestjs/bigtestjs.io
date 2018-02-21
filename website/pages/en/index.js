@@ -115,6 +115,55 @@ const Features = props => (
   </Block>
 );
 
+const Testimonials = props => (
+  <Container className="testimonials">
+    <GridBlock
+      align="center"
+      contents={[
+        {
+          content:
+            "<i>Leverage agile frameworks to provide a robust synopsis for high level overviews. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</i>",
+          image: `${siteConfig.baseUrl}img/john.jpeg`,
+          imageAlign: "top",
+          title: 'John Johnson <br/><font size="2">Worlds Greatest Developer</font>'
+        },
+        {
+          content:
+            "<i>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.</i>",
+          image: `${siteConfig.baseUrl}img/anderson.jpeg`,
+          imageAlign: "top",
+          title: 'Mr. Anderson <br/><font size="2">Voted "Most Credible Reviewer" in College</font>'
+        },
+        {
+          content:
+            "<i>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps.</i>",
+          image: `${siteConfig.baseUrl}img/paul.jpeg`,
+          imageAlign: "top",
+          title: '...Paul? <br/><font size="2">Nice Guy</font>'
+        }
+      ]}
+      layout="threeColumn"
+    />
+    <div className="disclaimer"><font size="1">These are not real people or testimonials.</font></div>
+  </Container>
+);
+
+const HowTo = ({ language }) => (
+  <div className="howToSection">
+      <Container>
+        <div>
+          <h2>You've Convinced Me! How do I use This?!</h2>
+          <p>Lee rutters matey. Snow scallywag chandler. Barkadeer cutlass gaff. Prow gibbet avast.</p>
+        </div>
+        <div>
+          <a className="button" href={docUrl('installation.html', language)}>
+            Get Started
+          </a>
+        </div>
+      </Container>
+    </div>
+);
+
 const Showcase = props => {
   if ((siteConfig.users || []).length === 0) {
     return null;
@@ -125,14 +174,14 @@ const Showcase = props => {
     })
     .map((user, i) => {
       return (
-        <a href={user.infoLink} key={i}>
+        <a href={user.infoLink} className="growOnHover" key={i}>
           <img src={user.image} title={user.caption} />
         </a>
       );
     });
 
   return (
-    <div className="productShowcaseSection paddingBottom">
+    <div className="productShowcaseSection">
       <h2>{"Who's Using This?"}</h2>
       <p>All These People Love BigTest</p>
       <div className="logos">{showcase}</div>
@@ -154,7 +203,9 @@ class Index extends React.Component {
         <HomeSplash language={language} />
         <div className="aboutContainer">
           <Features />
+          <HowTo language={language} />
           <Showcase language={language} />
+          <Testimonials />
         </div>
       </div>
     );
