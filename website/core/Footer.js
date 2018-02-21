@@ -5,32 +5,32 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require('react')
 
 class Footer extends React.Component {
-  docUrl(doc, language) {
-    const baseUrl = this.props.config.baseUrl;
-    return baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+  docUrl (doc, language) {
+    const baseUrl = this.props.config.baseUrl
+    return baseUrl + 'docs/' + (language ? language + '/' : '') + doc
   }
 
-  pageUrl(doc, language) {
-    const baseUrl = this.props.config.baseUrl;
-    return baseUrl + (language ? language + '/' : '') + doc;
+  pageUrl (doc, language) {
+    const baseUrl = this.props.config.baseUrl
+    return baseUrl + (language ? language + '/' : '') + doc
   }
 
-  render() {
-    const currentYear = new Date().getFullYear();
+  render () {
+    const currentYear = new Date().getFullYear()
     return (
-      <footer className="nav-footer" id="footer">
-        <section className="sitemap">
-          <a href={this.props.config.baseUrl} className="nav-home">
+      <footer className='nav-footer' id='footer'>
+        <section className='sitemap'>
+          <a href={this.props.config.baseUrl} className='nav-home'>
             {this.props.config.footerIcon && (
               <img
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
                 alt={this.props.config.title}
-                className="growOnHover"
-                width="66"
-                height="58"
+                className='growOnHover'
+                width='66'
+                height='58'
               />
             )}
           </a>
@@ -45,20 +45,20 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href="https://twitter.com/thefrontside"><i className="fab fa-twitter"></i> Twitter</a>
+            <a href='https://twitter.com/thefrontside'><i className='fab fa-twitter' /> Twitter</a>
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://github.com/thefrontside/bigtest#bigtest-"><i className="fab fa-github"></i> Github</a>
-            <a href="https://fronstide.io">The Frontside</a>
+            <a href='https://github.com/thefrontside/bigtest#bigtest-'><i className='fab fa-github' /> Github</a>
+            <a href='https://fronstide.io'>The Frontside</a>
           </div>
         </section>
-        <section className="copyright">
+        <section className='copyright'>
           &copy; 2017 - {currentYear} THE FRONTSIDE, INC.
         </section>
       </footer>
-    );
+    )
   }
 }
 
-module.exports = Footer;
+module.exports = Footer

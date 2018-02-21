@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- const users = [
-   {
-     caption: 'Frontside',
-     image: 'img/frontside-icon-transparent.png',
-     infoLink: 'https://frontside.io',
-     pinned: true
-   }
- ];
+const users = [
+  {
+    caption: 'Frontside',
+    image: 'img/frontside-icon-transparent.png',
+    infoLink: 'https://frontside.io',
+    pinned: true
+  }
+]
 
 /* List of projects/orgs using your project for the users page */
 const siteConfig = {
@@ -26,7 +26,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
     { page: 'help', label: 'Help' },
-    {  blog: false },
+    { blog: false }
   ],
   users,
   cname: 'bigtest.js.org',
@@ -37,7 +37,7 @@ const siteConfig = {
   /* colors for website */
   colors: {
     primaryColor: '#16325B',
-    secondaryColor: '#7E8B9F',
+    secondaryColor: '#7E8B9F'
   },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
@@ -48,7 +48,7 @@ const siteConfig = {
   // projectName: 'test-site', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'rainbow',
+    theme: 'rainbow'
   },
   stylesheets: ['https://fonts.googleapis.com/css?family=Raleway'],
   scripts: [
@@ -56,7 +56,7 @@ const siteConfig = {
     'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/facebook/test-site',
-};
+  repoUrl: 'https://github.com/facebook/test-site'
+}
 
-module.exports = siteConfig;
+module.exports = siteConfig
