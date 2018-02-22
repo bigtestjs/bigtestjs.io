@@ -36,6 +36,10 @@ body, h1, h2, .fixedHeaderContainer header h2  {
   margin: 0;
 }
 
+.docs-prevnext {
+  padding-top: 2em;
+}
+
 .howToSection .container {
   padding-top: 3em;
   text-align: center;
