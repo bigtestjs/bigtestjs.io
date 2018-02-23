@@ -28,9 +28,16 @@ const siteConfig = {
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
     { page: 'help', label: 'Help' },
+    { search: true },
     { blog: false }
   ],
   users,
+  algolia: {
+    apiKey: '93fbb17f31be6f6b9f4eff7b53a1582f',
+    indexName: 'bigtest',
+    inputSelector: '### REPLACE ME ####',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  },
   cname: 'bigtest.js.org',
   /* path to images for header/footer */
   headerIcon: 'img/ghost-logo.png',
@@ -52,10 +59,14 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'rainbow'
   },
-  stylesheets: ['https://fonts.googleapis.com/css?family=Raleway'],
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Raleway',
+    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+  ],
   scripts: [
     'https://buttons.github.io/buttons.js',
-    'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
+    'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
+    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/facebook/test-site'
