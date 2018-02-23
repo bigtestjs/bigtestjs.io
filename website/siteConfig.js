@@ -26,9 +26,8 @@ const siteConfig = {
   noIndex: false,
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
-    { page: 'help', label: 'Help' },
     { search: true },
-    { blog: false }
+    { page: 'help', label: 'Help' }
   ],
   users,
   algolia: {

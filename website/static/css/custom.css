@@ -4,7 +4,7 @@ body, h1, h2, .fixedHeaderContainer header h2  {
 
 .fixedHeaderContainer {
   min-height: 4em;
-  padding: 1.5em 0;
+  padding: 0.5em 0;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #000000;
   background-color: #16325B;
