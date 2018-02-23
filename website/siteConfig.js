@@ -16,9 +16,8 @@ const users = [
   }
 ]
 
-/* List of projects/orgs using your project for the users page */
 const siteConfig = {
-  title: 'BigTest' /* title for your website */,
+  title: 'BigTest',
   tagline: 'Making your application work since 2017.',
   url: 'https://bigtest.js.org',
   baseUrl: '/',
@@ -36,27 +35,21 @@ const siteConfig = {
     apiKey: '93fbb17f31be6f6b9f4eff7b53a1582f',
     indexName: 'bigtest',
     inputSelector: '### REPLACE ME ####',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    debug: false
   },
   cname: 'bigtest.js.org',
-  /* path to images for header/footer */
   headerIcon: 'img/ghost-logo.png',
   footerIcon: 'img/ghost-logo.png',
   favicon: 'img/favicon/ghost-favicon.png',
-  /* colors for website */
   colors: {
     primaryColor: '#16325B',
     secondaryColor: '#7E8B9F'
   },
-  // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright:
     'Copyright © ' +
     new Date().getFullYear() +
     'The Frontside',
-  // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
-  // projectName: 'test-site', // or set an env variable PROJECT_NAME
   highlight: {
-    // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'rainbow'
   },
   stylesheets: [
@@ -68,7 +61,6 @@ const siteConfig = {
     'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js'
   ],
-  // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/facebook/test-site'
 }
 
