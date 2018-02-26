@@ -39,7 +39,7 @@ const siteConfig = {
   cname: 'bigtest.js.org',
   headerIcon: 'img/logo-white-square.svg',
   footerIcon: 'img/logo-square.svg',
-  favicon: 'img/favicon/favicon-32x32.png',
+  favicon: 'img/favicon/favicon-32x32.ico',
   colors: {
     primaryColor: '#16325B',
     secondaryColor: '#7E8B9F'
