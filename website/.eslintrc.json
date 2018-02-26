@@ -5,6 +5,7 @@
     "eslint-config-logux/browser"
   ],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "max-len": 0
   }
 }

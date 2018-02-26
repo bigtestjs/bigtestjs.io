@@ -37,9 +37,9 @@ const siteConfig = {
     debug: false
   },
   cname: 'bigtest.js.org',
-  headerIcon: 'img/ghost-logo.png',
-  footerIcon: 'img/ghost-logo.png',
-  favicon: 'img/favicon/ghost-favicon.png',
+  headerIcon: 'img/logo-white-square.svg',
+  footerIcon: 'img/logo-square.svg',
+  favicon: 'img/favicon/favicon-32x32.png',
   colors: {
     primaryColor: '#16325B',
     secondaryColor: '#7E8B9F'
