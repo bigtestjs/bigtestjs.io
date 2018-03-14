@@ -1,0 +1,118 @@
+body, h1, h2, .fixedHeaderContainer header h2  {
+  font-family: 'Raleway', sans-serif;
+}
+
+.fixedHeaderContainer {
+  min-height: 4em;
+  padding: 0.5em 0;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #000000;
+  background-color: #16325B;
+}
+
+.homeContainer {
+  background-image: url('/images/contact-background.png');
+}
+
+.homeSplashFade {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.promoSection .promoRow .pluginRowBlock .pluginWrapper {
+  padding: 0 1.5em;
+}
+
+.aboutContainer .container {
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+
+.docMainWrapper {
+  padding-bottom: 1.5em;
+}
+
+.docs-prevnext .button {
+  margin: 0;
+}
+
+.docs-prevnext {
+  padding-top: 2em;
+}
+
+.howToSection .container {
+  padding-top: 3em;
+  text-align: center;
+  background-color: rgba(22, 50, 91, 0.5);
+}
+
+.howToSection .container h2 {
+  text-align: center;
+}
+
+.productShowcaseSection, .testimonials {
+  padding-top: 3em;
+  background-color: rgba(126, 139, 159, 0.5);
+}
+
+.styleBreak, .styleBreak2, .styleBreak3 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #000000 inset;
+}
+
+.styleBreak {
+  background-color: rgba(126, 139, 159, 0.5);
+}
+
+.styleBreak2 {
+  background-color: rgba(22, 50, 91, 0.5);
+}
+
+.styleBreak3 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.testimonials img {
+  border-radius: 50%;
+  height: auto;
+}
+
+.growOnHover {
+  transition: transform 0.3s;
+}
+
+.growOnHover:hover {
+  transform: scale(1.2);
+}
+
+pre code {
+  border-left: none;
+}
+
+footer.nav-footer {
+  background: #7E8B9F;
+  box-shadow: 0 10px 10px -10px #000000 inset;
+  padding-bottom: 1em;
+}
+
+footer .sitemap {
+  padding-left: 8em;
+  margin-bottom: .5em;
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}

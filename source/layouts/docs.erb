@@ -1,0 +1,21 @@
+<% wrap_layout :layout do %>
+  <div class="docMainWrapper wrapper">
+    <%= partial "partials/sidebar" %>
+
+    <div class="container mainContainer">
+      <div class="wrapper">
+        <div class="post">
+          <div class="postHeader">
+            <h1><%= current_page.data.title %></h1>
+          </div>
+          <article>
+            <%= yield %>
+          </article>
+        </div>
+        <div class="docs-prevnext">
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
