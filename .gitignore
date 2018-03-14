@@ -1,2 +1,5 @@
-node_modules
-\.DS_Store
+.bundle
+.cache
+.DS_Store
+.sass-cache
+build/

@@ -1,0 +1,68 @@
+<div class="container docsNavContainer" id="docsNav">
+  <nav class="toc">
+    <div class="toggleNav">
+      <section class="navWrapper wrapper">
+        <div class="navBreadcrumb wrapper">
+          <div class="navToggle" id="navToggler">
+            <i></i>
+          </div>
+          <h2>
+            <i>›</i>
+            <span>BigTest</span>
+          </h2>
+        </div>
+        <div class="navGroups">
+          <div class="navGroup navGroupActive">
+            <h3>BigTest</h3>
+            <ul>
+              <li class="navListItem navListItemActive">
+                <a class="navItem navItemActive" href="/docs/intro.html">Introduction</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/examples.html">Examples</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navGroup navGroupActive">
+            <h3>Getting Started</h3>
+            <ul>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/installation.html">Installation</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/separating-side-effects.html">Separating Side Effects</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/modeling-interactions.html">Modeling Interactions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navGroup navGroupActive">
+            <h3>API</h3>
+            <ul>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/interaction.html">@bigtest/interaction</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/convergence.html">@bigtest/convergence</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/mocha.html">@bigtest/mocha</a>
+              </li>
+              <li class="navListItem">
+                <a class="navItem" href="/docs/mirage.html">@bigtest/mirage</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+     var toggler = document.getElementById('navToggler');
+     var nav = document.getElementById('docsNav');
+     toggler.onclick = function() {
+       nav.classList.toggle('docsSliderActive');
+     };
+    </script>
+  </nav>
+</div>
