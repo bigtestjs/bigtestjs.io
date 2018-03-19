@@ -1,0 +1,7 @@
+{
+  "name": "bigtest.js.org",
+  "private": true,
+  "devDependencies": {
+    "@bigtest/convergence": "^0.5.0"
+  }
+}
