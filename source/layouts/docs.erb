@@ -5,9 +5,12 @@
     <div class="container mainContainer">
       <div class="wrapper">
         <div class="post">
-          <div class="postHeader">
-            <h1><%= current_page.data.title %></h1>
-          </div>
+          <% if current_page.data.title %>
+            <div class="postHeader">
+              <h1><%= current_page.data.title %></h1>
+            </div>
+          <% end %>
+
           <article>
             <%= yield %>
           </article>
