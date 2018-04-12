@@ -1,0 +1,30 @@
+$font-serif: 'Open Sans', 'Helvetica', sans-serif;
+
+$size-xs: 0.75rem;
+$size-small: 0.825rem;
+$size-normal: 1rem;
+$size-medium: 1.125rem;
+$size-med-lg: 1.25rem;
+$size-large: 1.5rem;
+$size-xl: 1.75rem;
+
+$color-primary: #26abe8;
+$color-secondary: #f74d7b;
+$color-secondary-light: lighten($color-secondary, 30%);
+$color-tertiary: #14315d;
+$color-gray: #eeeef6;
+
+$space-xxs: 0.5rem;
+$space-xs: 1rem;
+$space-small: 1.5rem;
+$space-med-sm: 3rem;
+$space-medium: 4rem;
+$space-med-lg: 6rem;
+$space-large: 7rem;
+$space-xl: 10rem;
+
+$shadow-medium: 0 0.125rem 0.5rem rgba(black, 0.2);
+$shadow-large: 0 0.25rem 0.5rem rgba(black, 0.1);
+
+$media-medium-up: 'screen and (min-width: 40rem)';
+$media-large-up: 'screen and (min-width: 75rem)';

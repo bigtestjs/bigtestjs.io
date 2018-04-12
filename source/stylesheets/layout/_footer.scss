@@ -1,0 +1,65 @@
+.footer {
+  background-color: $color-primary;
+  color: white;
+  padding: $space-small 0;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    color: inherit;
+    line-height: 1.5;
+  }
+
+  &-logo {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+
+    img {
+      display: block;
+      height: $space-medium;
+    }
+ }
+
+  &-sitemap, &-sitemap-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &-copyright {
+    font-size: $size-xs;
+    text-align: center;
+  }
+
+  @media #{$media-medium-up} {
+    /* aligns the logo words with the list below it */
+    $logo-overlap: 4.5rem;
+
+    text-align: left;
+    padding: $space-med-sm $logo-overlap $space-small;
+
+    h5 {
+      margin: $space-small 0 0.5rem;
+    }
+
+    &-logo {
+      margin-top: -0.5rem;
+      margin-left: -$logo-overlap;
+      margin-bottom: 0;
+    }
+
+    &-sitemap {
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: $space-medium;
+    }
+
+    &-sitemap-section {
+      align-items: start;
+      padding: 0 $space-small;
+      width: 25%;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.btn {
+  border-radius: 0.5rem;
+  box-shadow: $shadow-medium;
+  display: inline-block;
+  height: $space-med-sm;
+  line-height: $space-med-sm;
+  padding: 0 $space-small;
+  font-weight: 600;
+
+  &--primary {
+    background-color: $color-primary;
+    color: white;
+
+    &.btn--hollow {
+      color: $color-primary;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: white;
+
+    &.btn--hollow {
+      color: $color-secondary;
+    }
+  }
+
+  &--hollow {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid;
+  }
+}
