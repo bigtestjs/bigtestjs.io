@@ -1,0 +1,46 @@
+.header {
+  align-items: center;
+  background-color: $color-primary;
+  box-shadow: $shadow-large;
+  display: flex;
+  height: $space-medium;
+  padding: 0 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: z(navigation);
+
+  &-logo {
+    background: url('/images/logo-white-square.svg') no-repeat center;
+    background-origin: content-box;
+    margin-right: auto;
+    padding: 0.25rem;
+    height: $space-medium;
+    width: $space-medium;
+
+    @media screen and (min-width: 34rem) {
+      background-image: url('/images/logo-white.svg');
+      /* magic number: 2.8 is the logo's ratio */
+      width: $space-medium * 2.8;
+    }
+  }
+
+  &-nav {
+    margin-left: auto;
+
+    ul {
+      list-style: none;
+      display: flex;
+    }
+
+    a {
+      color: white;
+      display: block;
+      padding: 0 0.75rem;
+      line-height: $space-medium;
+
+      &:focus {
+        background: rgba(white, 0.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.main {
+  background-color: white;
+  flex-grow: 1;
+  padding-top: $space-medium;
+
+  @media #{$media-medium-up} {
+    display: flex;
+
+    &.index {
+      display: block;
+    }
+  }
+}

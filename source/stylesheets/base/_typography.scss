@@ -1,0 +1,33 @@
+h2 {
+  font-size: $size-med-lg;
+  font-weight: 700;
+  margin-bottom: $space-small;
+
+  @media #{$media-medium-up} {
+    font-size: $size-xl;
+  }
+}
+
+h3 {
+  color: $color-tertiary;
+  font-size: $size-medium;
+  margin-bottom: $space-small;
+  font-weight: 600;
+
+  @media #{$media-medium-up} {
+    font-size: $size-large;
+  }
+}
+
+h5 {
+  font-size: $size-normal;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-style: italic;
+}
