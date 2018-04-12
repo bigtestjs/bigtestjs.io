@@ -1,16 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.6)
+    activesupport (5.0.7)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    autoprefixer-rails (8.1.0.1)
+    autoprefixer-rails (8.2.0)
       execjs
-    backports (3.11.1)
+    backports (3.11.2)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -19,7 +19,7 @@ GEM
       sass (>= 3.2, < 3.5)
     concurrent-ruby (1.0.5)
     contracts (0.13.0)
-    dotenv (2.2.1)
+    dotenv (2.2.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -92,7 +92,7 @@ GEM
     parallel (1.12.1)
     public_suffix (3.0.2)
     rack (2.0.4)
-    rack-livereload (0.3.16)
+    rack-livereload (0.3.17)
       rack
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
@@ -112,12 +112,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  kramdown (~> 1.16)
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-livereload (~> 3.4)
-  tzinfo-data
-  wdm (~> 0.1)
 
 BUNDLED WITH
    1.16.1
