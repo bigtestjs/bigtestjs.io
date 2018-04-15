@@ -1,0 +1,16 @@
+<div id="/<%= doc.longname %>" class="<%= doc_classes doc %>">
+  <h2 class="doc-title">
+    <em>new</em> <%= doc.name %>
+    <span class="doc-title-args">
+      (<em><%= doc.params.map(&:name).join(', ') %></em>)
+    </span>
+  </h2>
+
+  <div class="doc-content">
+    <%= markdown doc.classdesc %>
+  </div>
+
+  <% methods.each do |method| %>
+    <%= partial 'partials/doc/function', locals: { doc: method } %>
+  <% end %>
+</div>

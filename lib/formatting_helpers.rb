@@ -2,12 +2,17 @@
 class FormattingHelpers < Middleman::Extension
   helpers do
     def markdown(text)
-      Kramdown::Document.new(text, config[:markdown]).to_html if text
+      return unless text
+
+      Kramdown::Document
+        .new(text, config[:markdown]).to_html
+        .gsub(%r{(<(p|li)>)(\X*?)(</\2>)}) { $1 + no_widow($3) + $4 }
     end
 
     def inline_md(text)
+      return unless text
       md_conf = config[:markdown].merge(input: 'Spandown')
-      Kramdown::Document.new(text, md_conf).to_html if text
+      no_widow Kramdown::Document.new(text, md_conf).to_html
     end
 
     # ensures the last n words are not widowed

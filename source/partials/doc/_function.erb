@@ -1,0 +1,35 @@
+<div id="/<%= doc.longname %>" class="<%= doc_classes doc %>">
+  <% content_tag (doc.memberof ? :h3 : :h2), class: 'doc-title' do %>
+    <%= doc.name %>
+
+    <span class="doc-title-args">
+      (<em><%= doc.params.map(&:name).join(', ') %></em>)
+    </span>
+
+    <% if (doc.returns.length) %>
+      <span class="doc-title-return">
+        <em><%= doc.returns.first.type.names.join('|') %></em>
+      </span>
+    <% end %>
+  <% end %>
+
+  <ul class="doc-args">
+    <% doc.params.each do |param| %>
+      <li>
+        <em><%= param.name %></em>
+        <code><%= param.type.names.map(&:capitalize).join('|') %></code>
+        <%= inline_md param.description %>
+      </li>
+    <% end %>
+
+    <li class="doc-return">
+      <em><strong>returns</strong></em>
+      <code><%= doc.returns.first.type.names.join('|') %></code>
+      <%= inline_md doc.returns.first.description %>
+    </li>
+  </ul>
+
+  <div class="doc-content">
+    <%= markdown doc.description %>
+  </div>
+</div>

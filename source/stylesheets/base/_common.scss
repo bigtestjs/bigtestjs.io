@@ -14,8 +14,13 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font: 100%/1.5 $font-serif;
+  font: 100%/1.8 $font-serif;
   min-height: 100%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {

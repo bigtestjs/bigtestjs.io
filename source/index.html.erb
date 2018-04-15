@@ -28,7 +28,7 @@
     <% data.home.buckets.each do |bucket| %>
       <li>
         <h3><%= bucket.title %></h3>
-        <p><%= inline_md no_widow bucket.content %></p>
+        <p><%= inline_md bucket.content %></p>
       </li>
     <% end %>
   </ul>

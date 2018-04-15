@@ -8,6 +8,18 @@ class APIDocs < Middleman::Extension
     app.data.callbacks(:docs, proc { @docs })
   end
 
+  helpers do
+    def doc_classes(doc)
+      classnames = ['doc']
+      classnames << 'doc--class' if doc.kind == 'class'
+      classnames << 'doc--function' if doc.kind == 'function'
+      classnames << 'doc--method' if doc.memberof
+      classnames << 'is-private' if doc.private
+      classnames << 'is-static' if doc.scope == 'static'
+      classnames.join(' ')
+    end
+  end
+
   private
 
   def update_docs(packages)

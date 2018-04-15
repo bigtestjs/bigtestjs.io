@@ -7,12 +7,15 @@ $size-medium: 1.125rem;
 $size-med-lg: 1.25rem;
 $size-large: 1.5rem;
 $size-xl: 1.75rem;
+$size-xxl: 2rem;
 
 $color-primary: #26abe8;
+$color-primary-light: lighten($color-primary, 40%);
 $color-secondary: #f74d7b;
 $color-secondary-light: lighten($color-secondary, 30%);
 $color-tertiary: #14315d;
 $color-gray: #eeeef6;
+$color-gray-dark: darken($color-gray, 50%);
 
 $space-xxs: 0.5rem;
 $space-xs: 1rem;
@@ -27,4 +30,5 @@ $shadow-medium: 0 0.125rem 0.5rem rgba(black, 0.2);
 $shadow-large: 0 0.25rem 0.5rem rgba(black, 0.1);
 
 $media-medium-up: 'screen and (min-width: 40rem)';
+$media-med-lg-up: 'screen and (min-width: 62rem)';
 $media-large-up: 'screen and (min-width: 75rem)';

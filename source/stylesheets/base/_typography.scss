@@ -1,3 +1,13 @@
+h1 {
+  font-size: $size-large;
+  font-weight: 600;
+  margin-bottom: $space-small;
+
+  @media #{$media-medium-up} {
+    font-size: $size-xxl;
+  }
+}
+
 h2 {
   font-size: $size-med-lg;
   font-weight: 700;
@@ -24,10 +34,47 @@ h5 {
   font-weight: 700;
 }
 
+ul, ol, p {
+  font-size: $size-normal;
+  margin-bottom: $space-small;
+
+  code {
+    background: $color-gray;
+    border-radius: 0.25rem;
+    color: $color-gray-dark;
+    padding: 0 0.5em;
+  }
+
+  @media #{$media-medium-up} {
+    font-size: $size-medium;
+  }
+}
+
 a {
   text-decoration: none;
 }
 
 em {
   font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+pre {
+  font-size: $size-small;
+  margin-bottom: $space-small;
+
+  @media #{$media-medium-up} {
+    font-size: $size-normal;
+  }
+}
+
+code {
+  font-family: 'Operator Mono', 'Fira Code', monospace;
+}
+
+.center {
+  text-align: center;
 }
