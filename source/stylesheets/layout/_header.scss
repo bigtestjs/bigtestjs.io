@@ -1,13 +1,19 @@
 .header {
-  align-items: center;
   background-color: $color-primary;
   box-shadow: $shadow-large;
-  display: flex;
   height: $space-medium;
   padding: 0 0.5rem;
+  z-index: z(navigation);
   position: fixed;
   width: 100%;
-  z-index: z(navigation);
+
+  &-container {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 78rem;
+    width: 100%;
+  }
 
   &-logo {
     background: url('/images/logo-white-square.svg') no-repeat center;
@@ -35,11 +41,24 @@
     a {
       color: white;
       display: block;
-      padding: 0 0.75rem;
+      padding: 0 $space-xs;
       line-height: $space-medium;
 
       &:focus {
         background: rgba(white, 0.1);
+      }
+
+      &.is-active {
+        font-weight: 600;
+
+        &::after {
+          border-bottom: 2px solid;
+          content: '';
+          position: absolute;
+          top: calc(50% + 0.75em);
+          left: $space-xs;
+          right: $space-xs;
+        }
       }
     }
   }

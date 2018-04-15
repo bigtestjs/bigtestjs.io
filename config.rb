@@ -47,3 +47,19 @@ activate :external_pipeline,
   command: "yarn #{build? ? 'build' : 'start'}",
   source: './tmp',
   latency: 2
+
+# Misc helpers
+helpers do
+  def link_active?(url)
+    return false unless url
+    url = url[1..-1] if url[0] == '/'
+    current_page.path.start_with?(url)
+  end
+
+  def active_link_to(text, url, opts = {})
+    classes = [opts[:class]].compact
+    classes << 'is-active' if link_active?(url)
+    opts[:class] = classes.join(' ') unless classes.empty?
+    link_to(text, url, opts)
+  end
+end

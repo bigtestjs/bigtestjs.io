@@ -1,14 +1,16 @@
 <header class="header">
-  <a class="header-logo" href="/">
-    <span class="visually-hidden">
-      BigTest
-    </span>
-  </a>
+  <div class="header-container">
+    <a class="header-logo" href="/">
+      <span class="visually-hidden">
+        BigTest
+      </span>
+    </a>
 
-  <nav class="header-nav">
-    <ul>
-      <li><a href="/guides/intro">Guides</a></li>
-      <li><a href="/docs">Docs</a></li>
-    </ul>
-  </nav>
+    <nav class="header-nav">
+      <ul>
+        <li><%= active_link_to 'Guides', '/guides/intro' %></li>
+        <li><%= active_link_to 'Docs', '/docs' %></li>
+      </ul>
+    </nav>
+  </div>
 </header>

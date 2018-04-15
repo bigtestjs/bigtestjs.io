@@ -1,0 +1,19 @@
+<% wrap_layout :layout do %>
+  <% if current_page.path != 'docs/index.html' %>
+    <%= partial 'partials/sidebar', locals: {
+      title: 'API Docs',
+      links: data.docs.map do |data| {
+        title: data.pkg.name,
+        active: current_page.path.include?(data.name),
+        links: data.docs.map do |doc| {
+          title: doc.longname,
+          url: "/docs/#{data.name}/#/#{doc.longname}"
+        } end
+      } end
+    } %>
+  <% end %>
+
+  <article class="main-content">
+    <%= yield %>
+  </article>
+<% end %>

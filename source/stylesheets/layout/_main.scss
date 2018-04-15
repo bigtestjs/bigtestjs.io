@@ -1,13 +1,30 @@
 .main {
   background-color: white;
   flex-grow: 1;
-  padding-top: $space-medium;
+  padding: $space-medium 0;
+
+  &-content {
+    padding: $space-xs;
+    max-width: 60rem;
+    width: 100%;
+
+    @media #{$media-med-lg-up} {
+      padding-top: $space-med-sm;
+    }
+  }
 
   @media #{$media-medium-up} {
+    padding-bottom: $space-med-lg;
+  }
+
+  @media #{$media-med-lg-up} {
     display: flex;
+    justify-content: center;
+    padding-bottom: $space-large;
 
     &.index {
       display: block;
+      padding-bottom: 0;
     }
   }
 }

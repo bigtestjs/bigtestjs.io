@@ -12,19 +12,19 @@
 
   &-logo {
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: $space-xxs;
 
     img {
       display: block;
       height: $space-medium;
     }
- }
+  }
 
   &-sitemap, &-sitemap-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: $space-xs;
   }
 
   &-copyright {
@@ -37,14 +37,14 @@
     $logo-overlap: 4.5rem;
 
     text-align: left;
-    padding: $space-med-sm $logo-overlap $space-small;
+    padding: $space-med-sm 0 $space-small;
 
     h5 {
-      margin: $space-small 0 0.5rem;
+      margin: $space-small 0 $space-xxs;
     }
 
     &-logo {
-      margin-top: -0.5rem;
+      margin-top: -$space-xxs;
       margin-left: -$logo-overlap;
       margin-bottom: 0;
     }
@@ -53,7 +53,9 @@
       flex-direction: row;
       align-items: start;
       justify-content: space-between;
-      margin-bottom: $space-medium;
+      padding: 0 $logo-overlap;
+      margin: 0 auto $space-medium;
+      max-width: 78rem;
     }
 
     &-sitemap-section {

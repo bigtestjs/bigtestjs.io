@@ -1,0 +1,12 @@
+<h1><%= pkg.name %></h1>
+
+<% docs.select {|d| d.kind == 'class'}.each do |doc| %>
+  <%= partial 'partials/doc/class', locals: {
+    methods: docs.select {|d| d.memberof == doc.name},
+    doc: doc
+  } %>
+<% end %>
+
+<% docs.select {|d| d.kind == 'function' && !d.memberof}.each do |doc| %>
+  <%= partial 'partials/doc/function', locals: { doc: doc } %>
+<% end %>

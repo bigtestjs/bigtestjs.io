@@ -1,0 +1,48 @@
+.doc {
+  border: 1px solid $color-secondary-light;
+  border-radius: $space-xxs;
+  margin-bottom: $space-xs;
+  padding: $space-xs $space-xs 0;
+
+  &--method {
+    border-color: $color-primary-light;
+  }
+
+  &--method > &-title::before {
+    content: '#';
+    margin-right: -0.25em;
+  }
+
+  &--method.is-static > &-title::before {
+    content: '.';
+  }
+
+  &-title {
+    color: $color-tertiary;
+    font-weight: 400;
+
+    &-args {
+      color: $color-primary;
+      font-size: 0.875em;
+    }
+
+    &-return {
+      color: $color-secondary;
+      font-size: 0.875em;
+    }
+  }
+
+  &-args {
+    list-style: disc;
+    padding-left: $space-small;
+    margin-bottom: $space-small;
+
+    em {
+      color: $color-primary;
+    }
+  }
+
+  &-return em {
+    color: $color-secondary;
+  }
+}
