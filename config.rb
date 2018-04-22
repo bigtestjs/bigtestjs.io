@@ -33,8 +33,8 @@ end
 page '/docs/*', layout: 'doc'
 
 # JS & CSS will compile with rollup
-ignore '/javascripts/**/*'
-ignore '/stylesheets/**/*'
+ignore '/javascripts/*'
+ignore '/stylesheets/*'
 
 # API Docs
 data.docs.each do |data|

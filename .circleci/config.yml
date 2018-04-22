@@ -1,32 +1,73 @@
+references:
+  defaults: &defaults
+    working_directory: ~/bigtest.js.org
+    docker:
+      - image: circleci/ruby:2.4-node
+
+  cache_key: &cache_key
+    bigtest.js.org-v1-{{ .Branch }}-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: ~/bigtest.js.org
+
+  persist_workspace: &persist_workspace
+      persist_to_workspace:
+        root: ~/bigtest.js.org
+        paths:
+          - ./
+
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:7.10
-    working_directory: ~/bigtest.js.org
+  install:
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache
-      - run: yarn install
+          name: Restore cache
+          key: *cache_key
+      - run:
+          name: Install bundle dependencies
+          command: bundle
+      - run:
+          name: Install package dependencies
+          command: yarn
       - save_cache:
-          key: dependency-cache
+          name: Save cache
+          key: *cache_key
           paths:
-            - ~/.yarn
-            - ~/.cache/yarn
+            - node_modules
             - vendor/bundle
+      - *persist_workspace
+
+  build:
+    <<: *defaults
+    steps:
+      - *attach_workspace
       - run:
-          name: Configure git
-          command: |
-            git config --global user.email "yesno@users.noreply.github.com"
-            git config --global user.name "yesno"
-            echo "machine github.com login yesno password $GITHUB_TOKEN" > ~/.netrc
+          name: Build
+          command: rake build
+      - *persist_workspace
+
+  deploy:
+    <<: *defaults
+    steps:
+      - *attach_workspace
       - run:
-          name: Lint Project
-          command: yarn lint
+          name: Publish to gh-pages
+          command: rake publish
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
       - deploy:
-          name: Deploy to Production
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cd website && yarn install && GIT_USER=yesno yarn run publish-gh-pages
-            fi
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
