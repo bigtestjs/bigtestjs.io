@@ -13,6 +13,10 @@
     }
   }
 
+  &.index {
+    padding-bottom: 0;
+  }
+
   @media #{$media-medium-up} {
     padding-bottom: $space-med-lg;
   }
@@ -24,7 +28,6 @@
 
     &.index {
       display: block;
-      padding-bottom: 0;
     }
   }
 }
