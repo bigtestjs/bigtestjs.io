@@ -3,19 +3,25 @@ references:
     working_directory: ~/bigtest.js.org
     docker:
       - image: circleci/ruby:2.4-node
+        environment:
+          BUNDLE_PATH: vendor/bundle
 
-  cache_key: &cache_key
-    bigtest.js.org-v1-{{ .Branch }}-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
+  bundle_cache_key: &bundle_cache_key
+    bigtest.js.org-v1-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+
+  yarn_cache_key: &yarn_cache_key
+    bigtest.js.org-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
   attach_workspace: &attach_workspace
     attach_workspace:
-      at: ~/bigtest.js.org
+      at: ~/
 
   persist_workspace: &persist_workspace
       persist_to_workspace:
-        root: ~/bigtest.js.org
+        root: ~/
         paths:
-          - ./
+          - bigtest.js.org
+          - .ssh
 
 version: 2
 jobs:
@@ -24,20 +30,27 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore cache
-          key: *cache_key
+          name: Restore bundle cache
+          key: *bundle_cache_key
       - run:
           name: Install bundle dependencies
-          command: bundle
+          command: bundle install
+      - save_cache:
+          name: Save bundle cache
+          key: *bundle_cache_key
+          paths:
+            - vendor/bundle
+      - restore_cache:
+          name: Restore yarn cache
+          key: *yarn_cache_key
       - run:
           name: Install package dependencies
-          command: yarn
+          command: yarn install
       - save_cache:
-          name: Save cache
-          key: *cache_key
+          name: Save yarn cache
+          key: *yarn_cache_key
           paths:
             - node_modules
-            - vendor/bundle
       - *persist_workspace
 
   build:
@@ -46,7 +59,7 @@ jobs:
       - *attach_workspace
       - run:
           name: Build
-          command: rake build
+          command: bundle exec rake build
       - *persist_workspace
 
   deploy:
@@ -55,7 +68,7 @@ jobs:
       - *attach_workspace
       - run:
           name: Publish to gh-pages
-          command: rake publish
+          command: bundle exec rake publish
 
 workflows:
   version: 2
