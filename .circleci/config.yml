@@ -70,8 +70,8 @@ jobs:
           name: Setup git config
           command: |
             touch ~/.gitconfig
-            git config --global user.email "oss@frontside.io"
-            git config --global user.name "BigTest-bot"
+            git config --global user.email $GIT_EMAIL
+            git config --global user.name $GIT_USERNAME
       - run:
           name: Publish to gh-pages
           command: bundle exec rake publish
