@@ -67,6 +67,12 @@ jobs:
     steps:
       - *attach_workspace
       - run:
+          name: Setup git config
+          command: |
+            touch ~/.gitconfig
+            git config --global user.email "oss@frontside.io"
+            git config --global user.name "BigTest-bot"
+      - run:
           name: Publish to gh-pages
           command: bundle exec rake publish
 
