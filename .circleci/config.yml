@@ -59,7 +59,7 @@ jobs:
       - *attach_workspace
       - run:
           name: Build
-          command: bundle exec rake build
+          command: bundle exec rake assets:precompile
       - *persist_workspace
 
 workflows:
