@@ -78,8 +78,6 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
-    middleman-gh-pages (0.3.1)
-      rake (> 0.9.3)
     middleman-livereload (3.4.6)
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
@@ -93,7 +91,10 @@ GEM
       activesupport (>= 3.1)
     parallel (1.12.1)
     public_suffix (3.0.2)
+    puma (3.11.4)
     rack (2.0.4)
+    rack-contrib (2.0.1)
+      rack (~> 2.0)
     rack-livereload (0.3.17)
       rack
     rake (12.3.1)
@@ -117,8 +118,10 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
-  middleman-gh-pages (~> 0.3.1)
   middleman-livereload (~> 3.4)
+  puma
+  rack-contrib
+  rake
 
 BUNDLED WITH
    1.16.1

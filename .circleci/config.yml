@@ -59,22 +59,8 @@ jobs:
       - *attach_workspace
       - run:
           name: Build
-          command: bundle exec rake build
+          command: bundle exec rake assets:precompile
       - *persist_workspace
-
-  deploy:
-    <<: *defaults
-    steps:
-      - *attach_workspace
-      - run:
-          name: Setup git config
-          command: |
-            touch ~/.gitconfig
-            git config --global user.email $GIT_EMAIL
-            git config --global user.name $GIT_USERNAME
-      - run:
-          name: Publish to gh-pages
-          command: bundle exec rake publish
 
 workflows:
   version: 2
@@ -84,9 +70,3 @@ workflows:
       - build:
           requires:
             - install
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master

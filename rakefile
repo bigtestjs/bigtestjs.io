@@ -1,1 +1,5 @@
-require 'middleman-gh-pages'
+namespace :assets do
+  task :precompile do
+    sh "yarn && middleman build"
+  end
+end
