@@ -41,4 +41,11 @@ nav ul {
   p {
     display: block;
   }
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }

@@ -53,11 +53,6 @@ ul, ol, p {
 a {
   text-decoration: none;
   color: $color-primary;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
 }
 
 em {
