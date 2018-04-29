@@ -4,6 +4,12 @@ require "rack/contrib/try_static"
 # Enable proper HEAD responses
 use Rack::Head
 
+# Forces SSL on all requests
+unless ENV['RACK_ENV'] == 'development'
+  require 'rack/ssl'
+  use Rack::SSL
+end
+
 # Add basic auth if configured
 if ENV["HTTP_USER"] && ENV["HTTP_PASSWORD"]
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
