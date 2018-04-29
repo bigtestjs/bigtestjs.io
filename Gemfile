@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'puma'
-gem 'rake'
 gem 'rack-contrib'
+gem 'rack-ssl'
+gem 'rake'
 
 gem 'middleman', '~> 4.2'
 gem 'middleman-autoprefixer', '~> 2.7'
