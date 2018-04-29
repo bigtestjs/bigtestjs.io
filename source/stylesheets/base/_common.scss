@@ -30,3 +30,22 @@ nav ul {
   position: absolute !important;
   width: 1px;
 }
+
+.quest-issue {
+  text-align: center;
+
+  h1 {
+    margin-top: 2.5em;
+  }
+
+  p {
+    display: block;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
