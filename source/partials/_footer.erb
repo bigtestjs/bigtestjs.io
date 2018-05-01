@@ -5,8 +5,8 @@
         <img src="/images/logo-white.svg" alt="BigTest">
       </a>
 
-      <a href="/guides">Guides</a>
-      <a href="/docs">Docs</a>
+      <%= link_to 'Guides', '/guides/intro.html' %>
+      <%= link_to 'Docs', '/docs/index.html' %>
     </div>
 
     <div class="footer-sitemap-section">
@@ -31,16 +31,4 @@
   <section class="footer-copyright">
     &copy; 2017 - <%= Date.today.year %> The Frontside, Inc.
   </section>
-
-  <% if !development? %>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118371188-1"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'UA-118371188-1');
-    </script>
-  <% end %>
 </footer>

@@ -13,29 +13,27 @@
 
     <ul class="sidebar-list">
       <% links.each do |link| %>
-        <% link[:active] ||= link_active? link[:url] %>
+        <% active = link[:active] || link_active?(link[:url]) %>
 
         <% if link[:links] %>
           <% link[:links].each do |li| %>
-            <% li[:active] ||= link_active? li[:url] %>
-            <% link[:active] ||= li[:active] %>
+            <% active ||= li[:active] || link_active?(li[:url]) %>
           <% end %>
 
-          <li class="sidebar-item <%= 'is-active' if link[:active] %>" data-collapsable>
-            <a href="#" class="sidebar-toggle">
-              <%= link[:title] %>
-            </a>
+          <li class="sidebar-item <%= 'is-active' if active %>" data-collapsable>
+            <%= link_to link[:title], '#', class: 'sidebar-toggle' %>
 
             <ul class="sidebar-list">
               <% link[:links].each do |li| %>
-                <li class="sidebar-item <%= 'is-active' if li[:active] %>">
+                <% li_active = li[:active] || link_active?(li[:url]) %>
+                <li class="sidebar-item <%= 'is-active' if li_active %>">
                   <%= link_to li[:title], li[:url] %>
                 </li>
               <% end %>
             </ul>
           </li>
         <% else %>
-          <li class="sidebar-item <%= 'is-active' if link[:active] %>">
+          <li class="sidebar-item <%= 'is-active' if active %>">
             <%= link_to link[:title], link[:url] %>
           </li>
         <% end %>

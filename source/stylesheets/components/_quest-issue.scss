@@ -1,0 +1,14 @@
+.quest-issue {
+  background: $color-primary-light;
+  border-radius: $space-xxs;
+  padding: $space-med-sm;
+  text-align: center;
+
+  h2 {
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: $space-xs;
+  }
+}

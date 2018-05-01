@@ -15,9 +15,9 @@
   </h2>
 
   <div class="home-hero-cta">
-    <a class="btn btn--secondary btn--hollow" href="/guides/quick-start.html">
-      Quick Start
-    </a>
+    <%= link_to 'Quick Start', '/guides/quick-start.html', {
+      class: 'btn btn--secondary btn--hollow'
+    } %>
   </div>
 </section>
 
@@ -40,9 +40,9 @@
   <ul class="home-users-list">
     <% data.home.users.each do |user| %>
       <li>
-        <a href="<%= user.website %>" target="_blank">
+        <% link_to user.website, target: '_blank' do %>
           <%= image_tag user.logo, alt: user.name %>
-        </a>
+        <% end %>
       </li>
     <% end %>
   </ul>

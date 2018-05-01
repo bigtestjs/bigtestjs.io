@@ -67,6 +67,18 @@
     color: $color-tertiary;
     display: block;
     padding: $space-xxs;
+    text-decoration: none;
+  }
+
+  &-nav > &-list > &-item.is-active > a::after {
+    content: '';
+    border-radius: 50%;
+    background: $color-primary;
+    width: $space-xxs;
+    height: $space-xxs;
+    margin-left: $space-xxs;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   &-item &-list {

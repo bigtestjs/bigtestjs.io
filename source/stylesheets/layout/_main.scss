@@ -8,6 +8,10 @@
     max-width: 60rem;
     width: 100%;
 
+    @media #{$media-medium-up} {
+      padding: $space-small;
+    }
+
     @media #{$media-med-lg-up} {
       padding-top: $space-med-sm;
     }

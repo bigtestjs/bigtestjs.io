@@ -118,6 +118,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  kramdown
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-livereload (~> 3.4)

@@ -51,7 +51,12 @@ ul, ol, p {
 }
 
 a {
+  color: $color-tertiary-light;
   text-decoration: none;
+
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
 }
 
 em {
@@ -60,6 +65,12 @@ em {
 
 strong {
   font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid $color-secondary-light;
+  margin-bottom: $space-small;
 }
 
 pre {
@@ -73,8 +84,4 @@ pre {
 
 code {
   font-family: 'Operator Mono', 'Fira Code', monospace;
-}
-
-.center {
-  text-align: center;
 }

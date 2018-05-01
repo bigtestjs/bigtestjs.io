@@ -1,0 +1,10 @@
+<% wrap_layout :layout do %>
+  <%= partial 'partials/sidebar', locals: {
+    title: 'Guides',
+    links: data.sidebars.guides
+  } %>
+
+  <article class="main-content">
+    <%= yield %>
+  </article>
+<% end %>
