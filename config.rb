@@ -57,10 +57,10 @@ helpers do
     current_page.path.start_with?(url)
   end
 
-  def active_link_to(text, url, opts = {})
-    classes = [opts[:class]].compact
-    classes << 'is-active' if link_active?(url)
-    opts[:class] = classes.join(' ') unless classes.empty?
+  def active_link_to(text, url, match = url)
+    opts = { class: [] }
+    opts[:class] << 'is-active' if link_active?(match)
+    opts[:class] = opts[:class].join(' ')
     link_to(text, url, opts)
   end
 end
