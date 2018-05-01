@@ -44,8 +44,9 @@
       padding: 0 $space-xs;
       line-height: $space-medium;
 
-      &:focus {
+      &:focus, &:hover {
         background: rgba(white, 0.1);
+        text-decoration: none;
       }
 
       &.is-active {

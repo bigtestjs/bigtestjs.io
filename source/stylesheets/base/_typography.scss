@@ -51,7 +51,12 @@ ul, ol, p {
 }
 
 a {
+  color: $color-tertiary-light;
   text-decoration: none;
+
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
 }
 
 em {
