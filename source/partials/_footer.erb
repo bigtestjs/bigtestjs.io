@@ -31,16 +31,4 @@
   <section class="footer-copyright">
     &copy; 2017 - <%= Date.today.year %> The Frontside, Inc.
   </section>
-
-  <% if !development? %>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118371188-1"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'UA-118371188-1');
-    </script>
-  <% end %>
 </footer>

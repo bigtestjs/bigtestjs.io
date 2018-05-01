@@ -32,5 +32,9 @@
     <%= partial 'partials/footer' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js' %>
     <%= javascript_include_tag 'app' %>
+
+    <% if !development? %>
+      <%= partial 'partials/analytics' %>
+    <% end %>
   </body>
 </html>
