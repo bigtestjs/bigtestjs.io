@@ -31,6 +31,7 @@ end
 
 # Pages
 page '/docs/*', layout: 'doc'
+page '/guides/*', layout: 'guide'
 
 # JS & CSS will compile with rollup
 ignore '/javascripts/*'

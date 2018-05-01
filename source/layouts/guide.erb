@@ -1,0 +1,12 @@
+<% wrap_layout :layout do %>
+  <% if current_page.path != 'guides/index.html' %>
+    <%= partial 'partials/sidebar', locals: {
+      title: 'Guides',
+      links: data.sidebars.guides
+    } %>
+  <% end %>
+
+  <article class="main-content">
+    <%= yield %>
+  </article>
+<% end %>
