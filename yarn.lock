@@ -502,9 +502,9 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@bigtest/convergence/-/convergence-0.7.0.tgz#df577d7e78b453cf80b4f29acf66dd7f60fcc0c1"
 
-"@bigtest/interactor@latest":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@bigtest/interactor/-/interactor-0.4.0.tgz#5be440d9d354dee9a9503fa138906cd665079883"
+"@bigtest/interactor@bigtestjs/interactor#rd/update-docs":
+  version "0.4.1"
+  resolved "https://codeload.github.com/bigtestjs/interactor/tar.gz/32f8ff8518eecf002e980ab0cff35cc23bb8c64a"
   dependencies:
     "@bigtest/convergence" "^0.7.0"
 
