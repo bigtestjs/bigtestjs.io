@@ -19,6 +19,7 @@ class FormattingHelpers < Middleman::Extension
     def no_widow(text, count = 2)
       return unless text
       words = text.split(' ')
+      return text unless words.length > 1
       beginwords = words[0, words.length - count].join(' ')
       endwords = words[0 - count, count].join('&nbsp;')
       "#{beginwords} #{endwords}"

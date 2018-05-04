@@ -4,16 +4,16 @@
   margin-bottom: $space-xs;
   padding: $space-xs $space-xs 0;
 
-  &--method {
+  &--member {
     border-color: $color-primary-light;
   }
 
-  &--method > &-title::before {
+  &--member > &-title::before {
     content: '#';
     margin-right: -0.25em;
   }
 
-  &--method.is-static > &-title::before {
+  &--member.is-static > &-title::before {
     content: '.';
   }
 

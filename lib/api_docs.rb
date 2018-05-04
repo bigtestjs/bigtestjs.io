@@ -13,7 +13,7 @@ class APIDocs < Middleman::Extension
       classnames = ['doc']
       classnames << 'doc--class' if doc.kind == 'class'
       classnames << 'doc--function' if doc.kind == 'function'
-      classnames << 'doc--method' if doc.memberof
+      classnames << 'doc--member' if doc.memberof
       classnames << 'is-private' if doc.private
       classnames << 'is-static' if doc.scope == 'static'
       classnames.join(' ')
