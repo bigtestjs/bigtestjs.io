@@ -2,7 +2,7 @@
 
 <% docs.select {|d| d.kind == 'class'}.each do |doc| %>
   <%= partial 'partials/doc/class', locals: {
-    methods: docs.select {|d| d.memberof == doc.name},
+    members: docs.select {|d| d.memberof == doc.name},
     doc: doc
   } %>
 <% end %>

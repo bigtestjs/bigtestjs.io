@@ -5,7 +5,7 @@
       title: data.pkg.name,
       active: current_page.path.include?(data.name),
       links: data.docs.map do |doc| {
-        title: doc.longname,
+        title: doc.longname + (%w[function method].include?(doc.kind) ? '()' : ''),
         url: "/docs/#{data.name}/#/#{doc.longname}"
       } end
     } end

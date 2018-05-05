@@ -1,0 +1,15 @@
+<div id="/<%= doc.longname %>" class="<%= doc_classes doc %>">
+  <% content_tag (doc.memberof ? :h3 : :h2), class: 'doc-title' do %>
+    <%= doc.name %>
+
+    <% if doc.type.present? %>
+      <span class="doc-title-return">
+        <em><%= doc.type.names.join('|') %></em>
+      </span>
+    <% end %>
+  <% end %>
+
+  <div class="doc-content">
+    <%= markdown doc.description %>
+  </div>
+</div>

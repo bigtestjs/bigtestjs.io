@@ -3,10 +3,14 @@
     <%= doc.name %>
 
     <span class="doc-title-args">
-      (<em><%= doc.params.map(&:name).join(', ') %></em>)
+      (<em>
+      <% if doc.params.present? %>
+        <%= doc.params.map{|p| p.name.split('.')[0] }.uniq.join(', ') %>
+      <% end %>
+      </em>)
     </span>
 
-    <% if (doc.returns.length) %>
+    <% if doc.returns.present? %>
       <span class="doc-title-return">
         <em><%= doc.returns.first.type.names.join('|') %></em>
       </span>
@@ -14,19 +18,23 @@
   <% end %>
 
   <ul class="doc-args">
-    <% doc.params.each do |param| %>
-      <li>
-        <em><%= param.name %></em>
-        <code><%= param.type.names.map(&:capitalize).join('|') %></code>
-        <%= inline_md param.description %>
-      </li>
+    <% if doc.params.present? %>
+      <% doc.params.each do |param| %>
+        <li>
+          <em><%= param.name %></em>
+          <code><%= param.type.names.map(&:capitalize).join('|') %></code>
+          <%= inline_md param.description %>
+        </li>
+      <% end %>
     <% end %>
 
-    <li class="doc-return">
-      <em><strong>returns</strong></em>
-      <code><%= doc.returns.first.type.names.join('|') %></code>
-      <%= inline_md doc.returns.first.description %>
-    </li>
+    <% if doc.returns.present? %>
+      <li class="doc-return">
+        <em><strong>returns</strong></em>
+        <code><%= doc.returns.first.type.names.join('|') %></code>
+        <%= inline_md doc.returns.first.description %>
+      </li>
+    <% end %>
   </ul>
 
   <div class="doc-content">
