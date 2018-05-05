@@ -509,12 +509,12 @@
   resolved "https://registry.yarnpkg.com/@bigtest/convergence/-/convergence-0.7.0.tgz#df577d7e78b453cf80b4f29acf66dd7f60fcc0c1"
 
 "@bigtest/convergence@latest":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@bigtest/convergence/-/convergence-0.8.0.tgz#f920cf966e5f720dd652205443891e319194f049"
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@bigtest/convergence/-/convergence-0.9.1.tgz#ddbe3e85e757b8fb82b80df95ed2e574c9d24429"
 
 "@bigtest/interactor@latest":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@bigtest/interactor/-/interactor-0.4.3.tgz#8d20f5a21be9139b4c2067a9f44e033f285cacfd"
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@bigtest/interactor/-/interactor-0.4.4.tgz#a05b53515fbcb57bc8d47726d3f0b83398fa8552"
   dependencies:
     "@bigtest/convergence" "^0.7.0"
 
