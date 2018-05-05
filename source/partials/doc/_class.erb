@@ -10,11 +10,7 @@
     <%= markdown doc.classdesc %>
   </div>
 
-  <% properties.each do |property| %>
-    <%= partial 'partials/doc/property', locals: { doc: property } %>
-  <% end %>
-
-  <% methods.each do |method| %>
-    <%= partial 'partials/doc/function', locals: { doc: method } %>
+  <% members.each do |member| %>
+    <%= partial "partials/doc/#{member.kind}", locals: { doc: member } %>
   <% end %>
 </div>
