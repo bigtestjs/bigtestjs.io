@@ -11,6 +11,7 @@
   &--member > &-title::before {
     content: '#';
     margin-right: -0.25em;
+    opacity: 0.6;
   }
 
   &--member.is-static > &-title::before {

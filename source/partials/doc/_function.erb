@@ -5,7 +5,7 @@
     <span class="doc-title-args">
       (<em>
       <% if doc.params.present? %>
-        <%= doc.params.map(&:name).join(', ') %>
+        <%= doc.params.map{|p| p.name.split('.')[0] }.uniq.join(', ') %>
       <% end %>
       </em>)
     </span>
