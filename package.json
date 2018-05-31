@@ -10,6 +10,7 @@
     "@babel/preset-env": "^7.0.0-beta.0",
     "@bigtest/convergence": "latest",
     "@bigtest/interactor": "latest",
+    "@bigtest/react": "latest",
     "babel-loader": "^8.0.0-beta.2",
     "css-loader": "^0.28.11",
     "highlight.js": "^9.12.0",
