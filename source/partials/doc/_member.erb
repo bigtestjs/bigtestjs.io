@@ -1,9 +1,11 @@
 <div class="<%= doc_classes doc %>">
-  <% content_tag (doc.memberof ? :h3 : :h2), class: 'doc-title', id: "/#{doc.longname}" do %>
-    <%= doc.name %>
+  <% content_tag (doc.memberof ? :h3 : :h2), id: "/#{doc.longname}" do %>
+    <span class="doc-name">
+      <%= doc.name %>
+    </span>
 
     <% if doc.type.present? %>
-      <span class="doc-title-return">
+      <span class="doc-name-return">
         <em><%= doc.type.names.join('|') %></em>
       </span>
     <% end %>
