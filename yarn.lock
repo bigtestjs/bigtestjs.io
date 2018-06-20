@@ -515,8 +515,8 @@
     "@bigtest/convergence" "^0.9.1"
 
 "@bigtest/react@latest":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@bigtest/react/-/react-0.1.1.tgz#7ff09a4c946857585af1d120e2073779de000c4c"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@bigtest/react/-/react-0.1.2.tgz#52b1c0ac7d3bbded421f1407e0e8a589c5261951"
   dependencies:
     history "^4.7.2"
 
