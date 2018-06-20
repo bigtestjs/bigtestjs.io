@@ -1,7 +1,9 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const config = {
+module.exports = (env = {}) => ({
+  mode: env.production ? 'production' : 'development',
+
   entry: [
     './source/javascripts/index.js',
     './source/stylesheets/app.scss'
@@ -33,8 +35,6 @@ const config = {
     })
   ],
 
-  stats: 'errors-only',
-  devtool: 'inline-source-map'
-};
-
-module.exports = config;
+  devtool: env.development && 'inline-source-map',
+  stats: 'errors-only'
+});

@@ -2,8 +2,8 @@
   "name": "bigtest.js.org",
   "private": true,
   "scripts": {
-    "build": "webpack --bail -p",
-    "start": "webpack --watch -d"
+    "build": "webpack --env.production --bail -p",
+    "start": "webpack --env.development --watch -d"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.0",
