@@ -11,8 +11,12 @@ $size-xxl: 2rem;
 
 $color-primary: #26abe8;
 $color-primary-light: lighten($color-primary, 40%);
+$color-primary-lighter: lighten($color-primary, 44%);
+$color-primary-dark: darken($color-primary, 5%);
 $color-secondary: #f74d7b;
 $color-secondary-light: lighten($color-secondary, 30%);
+$color-secondary-lighter: lighten($color-secondary, 33%);
+$color-secondary-dark: darken($color-secondary, 5%);
 $color-tertiary: #14315d;
 $color-tertiary-light: lighten($color-tertiary, 30%);
 $color-gray: #eeeef6;

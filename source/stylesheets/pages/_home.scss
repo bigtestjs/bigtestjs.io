@@ -41,9 +41,11 @@
   }
 
   &-logo {
-    width: 100%;
+    border-bottom: none;
     margin-bottom: $space-med-sm;
     max-width: 40rem;
+    padding-bottom: 0;
+    width: 100%;
 
     img {
       display: block;
@@ -74,7 +76,14 @@
   }
 
   &-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: $space-med-sm;
+
+    a {
+      margin-bottom: $space-xs;
+    }
   }
 }
 

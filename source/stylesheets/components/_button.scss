@@ -2,9 +2,8 @@
   border-radius: 0.5rem;
   box-shadow: $shadow-medium;
   display: inline-block;
-  height: $space-med-sm;
-  line-height: $space-med-sm;
-  padding: 0 $space-small;
+  padding: $space-xxs $space-small;
+  transition: background-color 100ms ease-in-out;
   font-weight: 600;
 
   &--primary {
@@ -13,6 +12,14 @@
 
     &.btn--hollow {
       color: $color-primary;
+
+      &:hover {
+        background-color: $color-primary-light;
+      }
+    }
+
+    &:hover {
+      background-color: $color-primary-dark;
     }
   }
 
@@ -22,6 +29,14 @@
 
     &.btn--hollow {
       color: $color-secondary;
+
+      &:hover {
+        background-color: $color-secondary-lighter;
+      }
+    }
+
+    &:hover {
+      background-color: $color-secondary-dark;
     }
   }
 
@@ -29,5 +44,9 @@
     background-color: transparent;
     box-shadow: none;
     border: 1px solid;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }

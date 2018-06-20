@@ -14,10 +14,14 @@ activate :autoprefixer do |prefix|
   prefix.browsers = 'last 2 versions'
 end
 
+# Markdown rules
 set :markdown,
-  fenced_code_blocks: true,
   input: 'GFM',
+  fenced_code_blocks: true,
   hard_wrap: false
+
+set :markdown_engine, nil
+Tilt.register FormattingHelpers::KramdownTemplate, 'md', 'markdown'
 
 # Dev-specific config
 configure :development do
@@ -47,8 +51,7 @@ end
 activate :external_pipeline,
   name: :js_css,
   command: "yarn #{build? ? 'build' : 'start'}",
-  source: './tmp',
-  latency: 2
+  source: './tmp'
 
 # Misc helpers
 helpers do
