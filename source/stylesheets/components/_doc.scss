@@ -4,6 +4,28 @@
   margin-bottom: $space-xs;
   padding: $space-xs $space-xs 0;
 
+  &--members-list {
+    columns: 2;
+    padding: 0 $space-xs;
+    list-style: none;
+
+    a::before {
+      content: '#';
+      margin-right: -0.25em;
+      opacity: 0.6;
+    }
+
+    &--static a::before {
+      content: '.';
+    }
+
+    &--heading {
+      font-size: $size-med-lg;
+      margin-bottom: $space-xxs;
+      padding: 0 $space-xs;
+    }
+  }
+
   &--member {
     border-color: $color-primary-light;
   }
@@ -37,6 +59,10 @@
     list-style: disc;
     padding-left: $space-small;
     margin-bottom: $space-small;
+
+    li {
+      margin-bottom: $space-xxs;
+    }
 
     em {
       color: $color-primary;

@@ -1,0 +1,47 @@
+.tabbed-layout {
+  & nav {
+    border: 1px solid $color-primary-light;
+    border-radius: $space-xxs;
+    display: flex;
+    margin-bottom: $space-small;
+    overflow: hidden;
+  }
+
+  & nav a {
+    display: block;
+    flex: 1;
+    padding: $space-xxs;
+    text-align: center;
+    text-decoration: none;
+    color: $color-secondary;
+    border-right: 1px solid $color-primary-light;
+
+    &:hover {
+      background: $color-primary-lighter;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &:not([data-active-tab]) nav {
+    display: none;
+  }
+
+  &[data-active-tab] &-panel {
+    display: none;
+  }
+
+  @for $i from 0 through 2 {
+    &[data-active-tab="#{$i}"] {
+      & nav a:nth-child(#{$i + 1}) {
+        background: $color-primary-light;
+      }
+
+      & .tabbed-layout-panel:nth-of-type(#{$i + 1}) {
+        display: block;
+      }
+    }
+  }
+}
