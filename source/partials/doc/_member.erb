@@ -1,5 +1,5 @@
-<div id="/<%= doc.longname %>" class="<%= doc_classes doc %>">
-  <% content_tag (doc.memberof ? :h3 : :h2), class: 'doc-title' do %>
+<div class="<%= doc_classes doc %>">
+  <% content_tag (doc.memberof ? :h3 : :h2), class: 'doc-title', id: "/#{doc.longname}" do %>
     <%= doc.name %>
 
     <% if doc.type.present? %>

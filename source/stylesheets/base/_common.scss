@@ -30,3 +30,22 @@ nav ul {
   position: absolute !important;
   width: 1px;
 }
+
+/* Normally, the header covers any target on the page. This shifts the
+   active target down below the header so it is completely visible */
+[id]:target {
+  position: static;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    display: block;
+    height: $space-med-lg;
+    margin-top: -$space-med-lg;
+    visibility: hidden;
+  }
+
+  & > * {
+    pointer-events: auto;
+  }
+}
