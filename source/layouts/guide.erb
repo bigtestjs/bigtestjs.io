@@ -1,3 +1,6 @@
+<% has_prev_guide = current_page.data.respond_to? 'prev_guide' %>
+<% has_next_guide = current_page.data.respond_to? 'next_guide' %>
+
 <% wrap_layout :layout do %>
   <%= partial 'partials/sidebar', locals: {
     title: 'Guides',
@@ -6,5 +9,37 @@
 
   <article class="main-content">
     <%= yield %>
+
+    <% if has_prev_guide || has_next_guide %>
+      <footer class="guides-footer">
+        <% if has_prev_guide %>
+          <div class="guides-footer--prev">
+            <% link_to current_page.data.prev_guide.url, {
+              :class => 'btn btn--secondary btn--hollow'
+            } do %>
+              <svg viewbox="0 0 100 100">
+                <path d="M75,0L25,50L75,100"/>
+              </svg>
+
+              <%= current_page.data.prev_guide.title %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if has_next_guide %>
+          <div class="guides-footer--next">
+            <% link_to current_page.data.next_guide.url, {
+              :class => 'btn btn--secondary btn--hollow'
+            } do %>
+              <%= current_page.data.next_guide.title %>
+
+              <svg viewbox="0 0 100 100">
+                <path d="M25,0L75,50L25,100">
+              </svg>
+            <% end %>
+          </div>
+        <% end %>
+      </footer>
+    <% end %>
   </article>
 <% end %>
