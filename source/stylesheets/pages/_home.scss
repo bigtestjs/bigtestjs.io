@@ -94,6 +94,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    list-style: none;
+    padding: 0;
 
     @media #{$media-medium-up} {
       flex-direction: row;
@@ -127,6 +129,8 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: $space-small;
+    list-style: none;
+    padding: 0;
 
     @media #{$media-medium-up} {
       flex-direction: row;
