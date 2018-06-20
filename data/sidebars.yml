@@ -1,6 +1,6 @@
 guides:
-  - title: Introduction
-    url: /guides/intro.html
+  - title: Testing Big
+    links:
+      - title: Getting Started
+        url: /guides/getting-started.html
 
-  - title: Quick Start
-    url: /guides/quick-start.html
