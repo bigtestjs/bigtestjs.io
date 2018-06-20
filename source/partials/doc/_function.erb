@@ -35,6 +35,14 @@
         <%= inline_md doc.returns.first.description %>
       </li>
     <% end %>
+
+    <% if doc.exceptions.present? && doc.exceptions.length > 0 %>
+      <li class="doc-throws">
+        <em><strong>throws</strong></em>
+        <code><%= doc.exceptions.first.type.names.join('|') %></code>
+        <%= inline_md doc.exceptions.first.description %>
+      </li>
+    <% end %>
   </ul>
 
   <div class="doc-content">

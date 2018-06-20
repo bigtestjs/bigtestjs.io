@@ -11,6 +11,16 @@
     <% end %>
   <% end %>
 
+  <% if doc.exceptions.present? && doc.exceptions.length > 0 %>
+    <ul class="doc-args">
+      <li class="doc-throws">
+        <em><strong>throws</strong></em>
+        <code><%= doc.exceptions.first.type.names.join('|') %></code>
+        <%= inline_md doc.exceptions.first.description %>
+      </li>
+    </ul>
+  <% end %>
+
   <div class="doc-content">
     <%= markdown doc.description %>
   </div>
