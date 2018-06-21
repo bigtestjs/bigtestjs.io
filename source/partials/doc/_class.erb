@@ -11,17 +11,17 @@
   </div>
 
   <div class="tabbed-layout">
-    <nav>
-      <a href="#">Index</a>
+    <div class="tabbed-layout-nav">
+      <button>Index</button>
 
       <% unless members.empty? %>
-        <a href="#">Properties</a>
+        <button>Properties</button>
       <% end %>
 
       <% unless methods.empty? %>
-        <a href="#">Methods</a>
+        <button>Methods</button>
       <% end %>
-    </nav>
+    </div>
 
     <section class="tabbed-layout-panel">
       <% unless members.empty? %>

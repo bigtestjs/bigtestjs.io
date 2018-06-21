@@ -1,8 +1,8 @@
 import initSidebar from './sidebar';
-import initTabbedLayout from './tabbed-layout';
+import TabbedLayoutComponent from './tabbed-layout';
 
 const { hljs } = window;
 
 hljs.initHighlighting();
 initSidebar();
-initTabbedLayout();
+TabbedLayoutComponent.init('.tabbed-layout');

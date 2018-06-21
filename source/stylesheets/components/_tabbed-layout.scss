@@ -1,47 +1,49 @@
 .tabbed-layout {
-  & nav {
-    border: 1px solid $color-primary-light;
-    border-radius: $space-xxs;
+  &-nav {
     display: flex;
     margin-bottom: $space-small;
-    overflow: hidden;
   }
 
-  & nav a {
-    display: block;
+  &-nav button {
     flex: 1;
     padding: $space-xxs;
     text-align: center;
     text-decoration: none;
     color: $color-secondary;
-    border-right: 1px solid $color-primary-light;
+    border: 1px solid $color-primary-light;
 
     &:hover {
       background: $color-primary-lighter;
     }
 
+    &:focus {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: $space-xxs;
+      border-bottom-left-radius: $space-xxs;
+    }
+
     &:last-child {
-      border-right: none;
+      border-top-right-radius: $space-xxs;
+      border-bottom-right-radius: $space-xxs;
+    }
+
+    &[aria-selected] {
+      background: $color-primary-light;
     }
   }
 
-  &:not([data-active-tab]) nav {
+  &:not([data-active-index]) &-nav {
     display: none;
   }
 
-  &[data-active-tab] &-panel {
+  &[data-active-index] &-panel[hidden] {
     display: none;
-  }
-
-  @for $i from 0 through 2 {
-    &[data-active-tab="#{$i}"] {
-      & nav a:nth-child(#{$i + 1}) {
-        background: $color-primary-light;
-      }
-
-      & .tabbed-layout-panel:nth-of-type(#{$i + 1}) {
-        display: block;
-      }
-    }
   }
 }
