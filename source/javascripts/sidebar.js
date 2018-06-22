@@ -1,70 +1,131 @@
 import { $$, isVisible } from './utils';
 
-export default function init() {
-  // collect collapsable nav pieces
-  let collapsableNavs = $$('.sidebar [data-collapsable]').map(($nav) => {
-    let $toggle = $nav.querySelector('.sidebar-toggle');
-    let $list = $nav.querySelector('.sidebar-list');
-    let active = $nav.classList.contains('is-active');
-    let visible = isVisible($toggle);
+class SidebarItemComponent {
+  constructor($root) {
+    this.$root = $root;
+    this.$toggle = $root.querySelector('.sidebar-toggle');
+    this.$list = $root.querySelector('.sidebar-list');
 
-    return { $nav, $toggle, $list, active, visible };
-  });
+    // add accessible attributes
+    this.$toggle.setAttribute('aria-expanded', true);
 
-  // add listeners to toggle collapsing the list
-  collapsableNavs.forEach(({ $nav, $toggle, $list, active, visible }) => {
-    let collapseList = () => {
-      $nav.classList.add('is-collapsed');
-      $list.style.maxHeight = '0px';
-    };
+    // add event listeners
+    this.$toggle.addEventListener('click', this.handleToggle.bind(this));
+    this.$list.addEventListener('transitionend', this.handleTransitionEnd.bind(this));
 
-    // after the list is expanded the max height is removed to allow any
-    // layout changes that may happen due to media queries
-    $list.addEventListener('transitionend', () => {
-      if (!$nav.classList.contains('is-collapsed')) {
-        $list.style.maxHeight = 'none';
-      }
-    });
-
-    // clicking the toggle expands or collapses the list
-    $toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      // when collapsed, this animates the list open;
-      // when expanded, sets an explicit height for animating later
-      $list.style.maxHeight = `${$list.scrollHeight}px`;
-
-      if ($nav.classList.contains('is-collapsed')) {
-        $nav.classList.remove('is-collapsed');
-      } else {
-        // when collapsing, this allows the max-height to take affect;
-        // without this it animates from 'none', which won't work
-        window.setTimeout(collapseList, 1);
-      }
-    });
-
-    // if the toggle is visible and not active, collapse by default
-    if (visible && !active) {
-      collapseList();
+    // collapse any non-active item
+    if (!this.isActive && this.isTogglable) {
+      this.collapse(true);
     }
-  });
+  }
 
-  // on window resize, toggles may become disabled or enabled and
-  // their lists must be expanded or collapsed
-  window.addEventListener('resize', () => {
-    collapsableNavs.forEach(({ $nav, $toggle, $list, visible }, i) => {
-      let nowVisible = isVisible($toggle);
-      let isCollapsed = $nav.classList.contains('is-collapsed');
+  get isActive() {
+    return this.$root.classList.contains('is-active');
+  }
 
-      if (!nowVisible && visible && isCollapsed) {
-        $nav.classList.remove('is-collapsed');
-        $list.style.maxHeight = 'none';
-      } else if (nowVisible && !visible && !isCollapsed) {
-        $nav.classList.add('is-collapsed');
-        $list.style.maxHeight = '0px';
+  get isCollapsed() {
+    return this.$toggle.getAttribute('aria-expanded') === 'false';
+  }
+
+  get isTogglable() {
+    return isVisible(this.$toggle);
+  }
+
+  expand() {
+    this.$list.style.display = '';
+    this.$list.removeAttribute('hidden');
+
+    // waits for a redraw
+    window.setTimeout(() => {
+      this.$toggle.setAttribute('aria-expanded', true);
+      this.$list.style.maxHeight = `${this.$list.scrollHeight}px`;
+    }, 1);
+  }
+
+  collapse(noAnimate) {
+    if (!noAnimate) {
+      this.$list.style.maxHeight = `${this.$list.scrollHeight}px`;
+    }
+
+    // waits for a redraw
+    window.setTimeout(() => {
+      this.$toggle.setAttribute('aria-expanded', false);
+      this.$list.style.maxHeight = '0px';
+
+      // when animating, this is done on transitionend
+      if (noAnimate) {
+        this.$list.style.display = 'none';
       }
+    }, 1);
+  }
 
-      collapsableNavs[i].visible = nowVisible;
+  toggle() {
+    if (this.isCollapsed) {
+      this.expand();
+    } else {
+      this.collapse();
+    }
+  }
+
+  // clicking the toggle expands or collapses the list
+  handleToggle(event) {
+    event.preventDefault();
+    this.toggle();
+  }
+
+  // after the list is collapsed, it is hidden; after it is expanded,
+  // the max height is removed
+  handleTransitionEnd() {
+    if (this.isCollapsed) {
+      this.$list.setAttribute('hidden', '');
+      this.$list.style.display = 'none';
+    } else {
+      this.$list.style.maxHeight = 'none';
+    }
+  };
+}
+
+export default class SidebarComponent {
+  static init(selector) {
+    return $$(selector).map($el => new this($el));
+  }
+
+  constructor($root) {
+    this.$root = $root;
+
+    // the sidebar itself is a collapsable item when mobile
+    this.nav = new SidebarItemComponent($root.firstElementChild);
+
+    // collect sidebar nav lists
+    this.items = $$('[data-collapsable]', $root).map($root => {
+      return new SidebarItemComponent($root);
     });
-  });
+
+    // on window resize, the nav toggle might need to be reset
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
+
+  // smaller screens can toggle the sidebar
+  get isTogglable() {
+    return this.nav.isTogglable;
+  }
+
+  handleResize() {
+    // init last togglable state
+    if (typeof this.wasTogglable === 'undefined') {
+      this.wasTogglable = this.isTogglable;
+    }
+
+    // no longer togglable, is collapsed: expand
+    if (this.wasTogglable && !this.isTogglable && this.nav.isCollapsed) {
+      this.nav.expand();
+
+    // now visible, is not collapsed, collapse
+    } else if (!this.wasTogglable && this.isTogglable && !this.nav.isCollapsed) {
+      this.nav.collapse(true);
+    }
+
+    // remember last togglable state
+    this.wasTogglable = this.isTogglable;
+  }
 }
