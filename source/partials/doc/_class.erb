@@ -10,7 +10,67 @@
     <%= markdown doc.classdesc %>
   </div>
 
-  <% members.each do |member| %>
-    <%= partial "partials/doc/#{member.kind}", locals: { doc: member } %>
-  <% end %>
+  <div class="tabbed-layout">
+    <div class="tabbed-layout-nav">
+      <button>Index</button>
+
+      <% unless members.empty? %>
+        <button>Properties</button>
+      <% end %>
+
+      <% unless methods.empty? %>
+        <button>Methods</button>
+      <% end %>
+    </div>
+
+    <section class="tabbed-layout-panel">
+      <% unless members.empty? %>
+        <h3 class="doc--members-list--heading">
+          Properties
+        </h3>
+
+        <ul class="doc--members-list">
+          <% members.each do |member| %>
+            <li class="<%= 'doc--members-list--static' if member.scope == 'static' %>">
+              <a href="<%= "/docs/#{name}/#/#{member.longname}" %>">
+                <%= member.name %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% unless methods.empty? %>
+        <h3 class="doc--members-list--heading">
+          Methods
+        </h3>
+
+        <ul class="doc--members-list">
+          <% methods.each do |func| %>
+            <li class="<%= 'doc--members-list--static' if func.scope == 'static' %>">
+              <a href="<%= "/docs/#{name}/#/#{func.longname}" %>">
+                <%= func.name %>()
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </section>
+
+    <% unless members.empty? %>
+      <section class="tabbed-layout-panel">
+        <% members.each do |member| %>
+          <%= partial "partials/doc/member", locals: { doc: member } %>
+        <% end %>
+      </section>
+    <% end %>
+
+    <% unless methods.empty? %>
+      <section class="tabbed-layout-panel">
+        <% methods.each do |func| %>
+          <%= partial "partials/doc/function", locals: { doc: func } %>
+        <% end %>
+      </section>
+    <% end %>
+  </div>
 </div>

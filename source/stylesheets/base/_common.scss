@@ -23,6 +23,14 @@ nav ul {
   padding: 0;
 }
 
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
 .visually-hidden {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -36,6 +44,7 @@ nav ul {
 [id]:target {
   position: static;
   pointer-events: none;
+  outline: none;
 
   &::before {
     content: '';

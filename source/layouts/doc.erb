@@ -4,8 +4,8 @@
     links: data.docs.map do |data| {
       title: data.pkg.name,
       active: current_page.path.include?(data.name),
-      links: data.docs.map do |doc| {
-        title: doc.longname + (%w[function method].include?(doc.kind) ? '()' : ''),
+      links: data.docs.select{|d| !d.memberof}.map do |doc| {
+        title: doc.longname + (doc.kind === 'function' ? '()' : ''),
         url: "/docs/#{data.name}/#/#{doc.longname}"
       } end
     } end

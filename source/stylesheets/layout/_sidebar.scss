@@ -17,6 +17,7 @@
     font-size: $size-med-lg;
     font-weight: 600;
     color: $color-tertiary;
+    border-bottom: $border;
 
     &-text {
       display: none;
@@ -31,6 +32,7 @@
     color: currentcolor;
     display: block;
     font: inherit;
+    text-decoration: none;
 
     &::after {
       border: 0.3rem solid transparent;
@@ -41,11 +43,11 @@
       position: absolute;
       top: 50%;
       right: $space-xxs;
+    }
 
-      .is-collapsed > & {
-        border-top: 0.4rem solid currentcolor;
-        border-bottom: none;
-      }
+    &[aria-expanded="false"]::after {
+      border-top: 0.4rem solid currentcolor;
+      border-bottom: none;
     }
 
     @media #{$media-med-lg-up} {
@@ -56,10 +58,6 @@
   &-list {
     overflow: hidden;
     transition: max-height 0.25s ease-out;
-  }
-
-  &-nav > &-list {
-    border-top: $border;
   }
 
   &-item a {
@@ -100,7 +98,7 @@
     }
   }
 
-  &-item.is-collapsed &-list,
+  [aria-expanded="false"] + &-list,
   &-item:last-child &-list {
     border-bottom: none;
   }

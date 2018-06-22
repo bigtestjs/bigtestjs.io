@@ -1,0 +1,49 @@
+.tabbed-layout {
+  &-nav {
+    display: flex;
+    margin-bottom: $space-small;
+  }
+
+  &-nav button {
+    flex: 1;
+    padding: $space-xxs;
+    text-align: center;
+    text-decoration: none;
+    color: $color-secondary;
+    border: 1px solid $color-primary-light;
+
+    &:hover {
+      background: $color-primary-lighter;
+    }
+
+    &:focus {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: $space-xxs;
+      border-bottom-left-radius: $space-xxs;
+    }
+
+    &:last-child {
+      border-top-right-radius: $space-xxs;
+      border-bottom-right-radius: $space-xxs;
+    }
+
+    &[aria-selected] {
+      background: $color-primary-light;
+    }
+  }
+
+  &:not([data-active-index]) &-nav {
+    display: none;
+  }
+
+  &[data-active-index] &-panel[hidden] {
+    display: none;
+  }
+}

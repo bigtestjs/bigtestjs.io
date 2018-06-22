@@ -4,27 +4,61 @@
   margin-bottom: $space-xs;
   padding: $space-xs $space-xs 0;
 
+  &--members-list {
+    columns: 2;
+    padding: 0 $space-xs;
+    list-style: none;
+
+    a::before {
+      content: '#';
+      margin-right: -0.25em;
+      opacity: 0.6;
+    }
+
+    &--static a::before {
+      content: '.';
+    }
+
+    &--heading {
+      font-size: $size-med-lg;
+      margin-bottom: $space-xxs;
+      padding: 0 $space-xs;
+    }
+  }
+
   &--member {
     border-color: $color-primary-light;
   }
 
-  &--member > &-title::before {
+  &--member &-name::before {
     content: '#';
     margin-right: -0.25em;
     opacity: 0.6;
   }
 
-  &--member.is-static > &-title::before {
+  &--member.is-static &-name::before {
     content: '.';
   }
 
-  &-title {
+  h2, h3 {
     color: $color-tertiary;
     font-weight: 400;
+  }
 
+  &-name {
     &-args {
       color: $color-primary;
       font-size: 0.875em;
+
+      &::before {
+        content: '(';
+        margin-right: -0.125em;
+      }
+
+      &::after {
+        content: ')';
+        margin-left: -0.125em;
+      }
     }
 
     &-return {
@@ -38,6 +72,10 @@
     padding-left: $space-small;
     margin-bottom: $space-small;
 
+    li {
+      margin-bottom: $space-xxs;
+    }
+
     em {
       color: $color-primary;
     }
@@ -45,5 +83,9 @@
 
   &-return em {
     color: $color-secondary;
+  }
+
+  &-throws em {
+    color: $color-tertiary;
   }
 }
