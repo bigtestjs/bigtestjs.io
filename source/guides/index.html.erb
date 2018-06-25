@@ -1,0 +1,21 @@
+---
+title: Guides
+---
+
+<h1>Introduction</h1>
+
+<h2>Guides</h2>
+
+<% data.sidebars.guides.each do |item| %>
+  <h3><%= item[:title] %></h3>
+
+  <ul>
+    <% item[:links].each do |li| %>
+      <li><%= link_to li[:title], li[:url] %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= partial 'partials/quest-issue', locals: {
+  issue_number: 18
+} %>

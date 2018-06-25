@@ -98,6 +98,10 @@
     }
   }
 
+  &-item &-list &-item.is-active a {
+    font-weight: 600;
+  }
+
   [aria-expanded="false"] + &-list,
   &-item:last-child &-list {
     border-bottom: none;
