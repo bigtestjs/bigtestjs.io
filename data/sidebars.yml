@@ -17,3 +17,8 @@ guides:
 
       - title: Available Interactions
         url: /guides/interactors/available-interactions.html
+
+  - title: Convergences
+    links:
+      - title: Introduction
+        url: /guides/convergences/introduction.html
