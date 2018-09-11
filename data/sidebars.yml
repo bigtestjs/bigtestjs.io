@@ -1,8 +1,10 @@
 guides:
   - title: Testing Big
     links:
+      - title: Quick Start
+        url: /guides/getting-started/quick-start.html
       - title: Getting Started
-        url: /guides/getting-started.html
+        url: /guides/getting-started/getting-started.html
 
   - title: Interactors
     links:
