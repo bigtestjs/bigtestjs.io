@@ -158,7 +158,7 @@ a static `defaultScope` property prevents us from having to initialize
 the interactor with a scope selector every time.
 
 ``` javascript
-@interactor class HomePageInteractor() {
+@interactor class HomePageInteractor {
   static defaultScope = '[data-test-home-page]';
   // ...
 }
