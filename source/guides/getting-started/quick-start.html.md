@@ -10,10 +10,9 @@ next_guide:
 This guide will teach you how to add BigTest to your React application.
 
 We'll cover:
-- Installing BigTest
-- Generating support files
-- Set Up
-- Writing some basic tests
+- [Installing BigTest](#install-dependencies)
+- [Generating support files](#initializing-bigtest)
+- [Launching and General Set Up](#launch-and-serve)
 
 The steps outlined in this guide assume that you are using:
 
