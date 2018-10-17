@@ -27,7 +27,8 @@ class APIDocs < Middleman::Extension
       {
         name: name,
         pkg: get_pkg(package),
-        docs: get_docs(package)
+        docs: get_docs(package),
+        title: "API Docs | #{name.capitalize}"
       }
     end
   end
