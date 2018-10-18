@@ -3,7 +3,7 @@ class FormattingHelpers < Middleman::Extension
   # ensures the last n words are not widowed
   def self.no_widow(text, count = 2)
     return unless text
-    words = text.split(' ')
+    words = text.split(%r{ (?=[^>]*?(?:<|$))}m)
     return text unless words.length > 1
     beginwords = words[0, words.length - count].join(' ')
     endwords = words[0 - count, count].join('&nbsp;')
