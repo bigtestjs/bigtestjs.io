@@ -154,4 +154,4 @@ yarn test
 
 That look like this:
 
-<img src="https://i.imgur.com/1yBTPgC.gif" alt="Gif of BigTest running" />
+![Gif of BigTest running](https://i.imgur.com/1yBTPgC.gif)
