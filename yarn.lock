@@ -645,10 +645,10 @@
   resolved "https://registry.yarnpkg.com/@bigtest/convergence/-/convergence-1.1.0.tgz#34e85b6221a7e5a62754a4644c0218a6d0217cb1"
   integrity sha512-sM7JLP9SKPXsjxaj/h9F1Fe5vGMUTZk1mNHp0Wfgs8J/1Mu4Xhv5x0O1C1Z/sfDmLqoy6gC3qYHTXyQtT2bxgA==
 
-"@bigtest/interactor@latest":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@bigtest/interactor/-/interactor-0.8.1.tgz#d0fe839cefc101246feefa35f27e7e5c6644fa97"
-  integrity sha512-ovPFBhllG7Ar+1tR1Km9Z6nKicz22102xyVN1zsyFFw1Qr1IOb813P5ZlEi1fakocQ/fZePFhCbWSlPoJxp7fQ==
+"@bigtest/interactor@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@bigtest/interactor/-/interactor-0.9.0.tgz#53e24332e5eb06cbb4eab03f2e90654a76d1b59d"
+  integrity sha512-Z0Pz4LuLGafa8bn9GtaSbrbIk6AaMpPixDowOurMt5O60hd4PxgBrTL3dJ05B6QXZjN8IMuZMqzXmYWIOS4QoQ==
   dependencies:
     "@bigtest/convergence" "^0.10.0"
 

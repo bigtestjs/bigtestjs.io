@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.0.0-beta.0",
     "@babel/preset-stage-3": "^7.0.0-beta.0",
     "@bigtest/convergence": "latest",
-    "@bigtest/interactor": "latest",
+    "@bigtest/interactor": "^0.9.0",
     "@bigtest/react": "latest",
     "babel-loader": "^8.0.0-beta.2",
     "css-loader": "^0.28.11",
