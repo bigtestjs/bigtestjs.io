@@ -1,5 +1,5 @@
 ---
-title: Guides | Quick Start
+title: Guides | Getting Started | Quick Start
 next_guide:
   title: Interactors Introduction
   url: /guides/interactors/introduction
