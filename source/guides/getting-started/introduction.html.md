@@ -41,6 +41,7 @@ introducting BigTest:
 We had a few requirements when setting out to find a testing tool
 that would be ideal for SPAs:
 
+- Fast 🏎
 - Built with components in mind
 - Cross browser (Firefox, IE, Safari, etc)
 - Cross device (Windows, macOS, iOS, Android, etc)
@@ -54,7 +55,53 @@ as of this writing, you currently can’t use it outside of Chrome
 webdriver](https://github.com/cypress-io/cypress/issues/310)) and
 wasn't written with components in mind.
 
-**[TODO, insert comparison table]**
+<table class="comparison-table">
+  <tr class="table-header center">
+    <td>Test Framework</td>
+    <td>Fast</td>
+    <td>Cross Browser</td>
+    <td>Cross Device</td>
+    <td>Cross Test Runner</td>
+    <td>Cross Framework</td>
+    <td>Built for Components</td>
+  </tr>
+  <tr class="center">
+    <td class="left">BigTest</td>
+    <td>🏎</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr class="center">
+    <td class="left">Cypress</td>
+    <td>🚗</td>
+    <td>✖️</td>
+    <td>✖️</td>
+    <td>✖️</td>
+    <td>✅<br></td>
+    <td>✖️</td>
+  </tr>
+  <tr class="center">
+    <td class="left">Selenium</td>
+    <td>🚌</td>
+    <td>✅<br></td>
+    <td>✖️</td>
+    <td>✅<br></td>
+    <td>✅<br></td>
+    <td>✖️</td>
+  </tr>
+  <tr class="center">
+    <td class="left">Jest</td>
+    <td>🏎</td>
+    <td>✖️</td>
+    <td>✖️</td>
+    <td>✖️<br></td>
+    <td>✅</td>
+    <td>✖️</td>
+  </tr>
+</table>
 
 Most of the existing frameworks check a few of those boxes (or
 partially check them), but not all of them. With mobile browsing being
@@ -65,14 +112,38 @@ to build what we wanted to see in the ecosystem!
 
 ## Testing philosophy
 
-- test like a user
-- test the _result_ of the action in the app, not stubbing or setting
-  test specific attributes to check
+[TODO, maybe this isn't the proper heading?]
 
 When writing tests with BigTest it's important to write tests like a
-user will be using your app. For example, if you have tests where you
-reach into a components or controllers state, that's not a proper
-BigTest. All interactions should come from a user.
+user will be using your app. When a person is interacting with your
+app, they’re using their mouse and keyboard which is translating to
+browser events that your app responds to. They’re clicking things and
+expecting to achieve results. This is what our app’s tests should do
+too: send browser events and assert that there was feedback.
+
+If you have tests where you reach into a components or
+controllers state, that's not a proper BigTest. All interactions
+should come from userland.
+
+## How does it work?
+
+BigTest mounts and renders your application into the browser. Then the
+tests you have written will be executed. Interactor drives
+the the application around, which is right there inside of the
+browser with the tests and the rendered application. This is the key
+difference between BigTest and other testing frameworks. BigTest
+doesn't have a seperate process that controls the browser, which is
+why you can just visit a URL and the tests will run.
+
+At a high level BigTest:
+
+- Starts your applications server (which bundles the tests & app)
+- Launches the browser(s)
+- Starts running the test runner
+- Interactor drives the application around (click this, visit that
+  route, etc)
+- Results are reported back to the CLI
+
 
 ## Packages that make up BigTest
 

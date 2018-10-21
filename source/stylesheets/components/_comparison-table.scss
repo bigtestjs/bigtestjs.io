@@ -1,0 +1,33 @@
+$table-border: 1px solid #ddd;
+
+.comparison-table {
+  border: $table-border;
+  margin-bottom: 1rem;
+
+  tr {
+    border-bottom: $table-border;
+  }
+
+  td {
+    border-right: $table-border;
+    padding: 4px;
+  }
+
+  .table-header td {
+    font-weight: 700;
+    padding-right: 6px;
+    background-color: white;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .left {
+    text-align: left;
+  }
+}
