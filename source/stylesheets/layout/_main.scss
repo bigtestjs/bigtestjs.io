@@ -14,6 +14,7 @@
 
     @media #{$media-med-lg-up} {
       padding-top: $space-med-sm;
+      width: calc(100% - 18rem);
     }
   }
 

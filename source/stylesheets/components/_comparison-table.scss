@@ -1,14 +1,17 @@
+$table-width: 115px;
+
 .table-wrapper {
   position: relative;
+  margin-bottom: $space-small;
 }
 
 .comparison-table {
-  margin-bottom: 1rem;
-  width: calc(145px * 6);
+  width: calc($table-width * 6);
   position: initial; // due to everything being set to `relative`
   border: none;
   border-collapse: separate;
   border-spacing: 0;
+  font-size: $size-medium;
 
   tr:nth-child(2n+2),
   tr:nth-child(2n+2) td {
@@ -16,18 +19,22 @@
   }
 
   thead th {
-    background-color: $color-primary-light;
+    height: 90px;
     color: black;
     padding: 10px;
     text-align: center;
-    white-space: nowrap;
-    width: 145px;
+    width: $table-width;
+    vertical-align: middle;
+    background-color: $color-primary-light;
+
+    &:first-child {
+      padding-top: $size-xs;
+    }
   }
 
   tbody td {
-    padding: 10px;
-    white-space: nowrap;
-    width: 145px;
+    padding: $space-xs;
+    width: $table-width;
   }
 
   .right {
@@ -45,19 +52,19 @@
 
 .table-scroller {
   position: initial;
-  margin-left: 145px;
+  padding-left: $table-width;
   overflow-x: scroll;
   overflow-y: visible;
-  padding-bottom: 5px;
-  width: calc(100% - 145px);
 }
 
 .sticky-col {
-  border-right: 2px solid $color-secondary;
   position: absolute;
   left: 0;
   top: auto;
-  width: 145px;
+  z-index: 1;
+  width: $table-width;
+  background-color: white;
+  border-right: 2px solid $color-secondary;
 
   &:first-child {
     border-right: 2px solid $color-secondary;

@@ -64,9 +64,9 @@ wasn't written with components in mind.
           <th>Fast</th>
           <th>Cross Browser</th>
           <th>Cross Device</th>
-          <th>Cross Test Runner</th>
+          <th>Cross Test&nbsp;Runner</th>
           <th>Cross Framework</th>
-          <th>Built for Components</th>
+          <th>Composable</th>
         </tr>
       </thead>
       <tbody>
@@ -104,7 +104,7 @@ wasn't written with components in mind.
           <td>❌</td>
           <td>❌<br></td>
           <td>✅</td>
-          <td>✅</td>
+          <td>❌</td>
         </tr>
       </tbody>
     </table>
