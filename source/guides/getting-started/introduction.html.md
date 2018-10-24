@@ -28,7 +28,7 @@ it, how confident can you really be in them?
 If you prefer video format, Robert DeLuca gave a talk at Byteconf
 introducing BigTest:
 
-<div class="video-wrapper">
+<div class="responsive-video">
   <iframe width="560" height="315"
   src="https://www.youtube.com/embed/w8a7Km9b6UI?start=107"
   frameborder="0" allow="autoplay; encrypted-media"
