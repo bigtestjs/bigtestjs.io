@@ -25,7 +25,8 @@ components working with each other to create an experience.
 If your tests don’t test the app in the same way a person would use
 it, how confident can you really be in them?
 
-If you prefer video format, Robert DeLuca gave a talk at Byteconf
+If you prefer video format, [Robert
+DeLuca](https://github.com/robdel12) gave a talk at Byteconf
 introducing BigTest:
 
 <div class="responsive-video">
@@ -45,8 +46,8 @@ that would be ideal for SPAs:
 - Built with components in mind
 - Cross-browser (Firefox, IE, Safari, etc)
 - Cross-device (Windows, macOS, iOS, Android, etc)
-- Cross framework (React, Vue, Ember, Angular, etc)
-- Cross test framework (Mocha, Jasmine, etc)
+- Cross-framework (React, Vue, Ember, Angular, etc)
+- Cross-test framework (Mocha, Jasmine, etc)
 
 There are tools like [Jest](https://jestjs.io), but those tests don’t
 run in a real browser. There’s also [Cypress](https://cypress.io), but
@@ -155,7 +156,7 @@ At a high-level BigTest:
 - Results are reported back to the CLI
 
 
-## Packages that makeup BigTest
+## Packages that make up BigTest
 
 The BigTest framework is comprised of a few small packages that can
 also be used individually. It's helpful to know of these packages
@@ -163,7 +164,7 @@ and what their role is in the BigTest framework.
 
 ### Convergence
 
-[Convergences](/docs/convergence/) are powerful, immutable, reusable,
+[Convergences](/docs/convergence/) are immutable, reusable,
 and composable assertions that allow you to know immediately when
 the desired state is achieved. Put in simple terms: it checks the DOM
 every 10ms (for 2s by default) to see if the state you're checking for

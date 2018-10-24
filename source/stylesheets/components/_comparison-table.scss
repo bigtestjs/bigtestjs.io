@@ -53,8 +53,7 @@ $table-width: 115px;
 .table-scroller {
   position: initial;
   padding-left: $table-width;
-  overflow-x: scroll;
-  overflow-y: visible;
+  overflow: auto;
 }
 
 .sticky-col {
