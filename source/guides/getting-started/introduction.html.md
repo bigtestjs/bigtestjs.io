@@ -26,7 +26,7 @@ If your tests don’t test the app in the same way a person would use
 it, how confident can you really be in them?
 
 If you prefer video format, Robert DeLuca gave a talk at Byteconf
-introducting BigTest:
+introducing BigTest:
 
 <div class="video-wrapper">
   <iframe width="560" height="315"
@@ -43,76 +43,82 @@ that would be ideal for SPAs:
 
 - Fast 🏎
 - Built with components in mind
-- Cross browser (Firefox, IE, Safari, etc)
-- Cross device (Windows, macOS, iOS, Android, etc)
+- Cross-browser (Firefox, IE, Safari, etc)
+- Cross-device (Windows, macOS, iOS, Android, etc)
 - Cross framework (React, Vue, Ember, Angular, etc)
 - Cross test framework (Mocha, Jasmine, etc)
 
 There are tools like [Jest](https://jestjs.io), but those tests don’t
 run in a real browser. There’s also [Cypress](https://cypress.io), but
 as of this writing, you currently can’t use it outside of Chrome
-([others coming soon through
+([others coming soon via
 webdriver](https://github.com/cypress-io/cypress/issues/310)) and
 wasn't written with components in mind.
 
-<table class="comparison-table">
-  <tr class="table-header center">
-    <td>Test Framework</td>
-    <td>Fast</td>
-    <td>Cross Browser</td>
-    <td>Cross Device</td>
-    <td>Cross Test Runner</td>
-    <td>Cross Framework</td>
-    <td>Built for Components</td>
-  </tr>
-  <tr class="center">
-    <td class="left">BigTest</td>
-    <td>🏎</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr class="center">
-    <td class="left">Cypress</td>
-    <td>🚗</td>
-    <td>✖️</td>
-    <td>✖️</td>
-    <td>✖️</td>
-    <td>✅<br></td>
-    <td>✖️</td>
-  </tr>
-  <tr class="center">
-    <td class="left">Selenium</td>
-    <td>🚌</td>
-    <td>✅<br></td>
-    <td>✖️</td>
-    <td>✅<br></td>
-    <td>✅<br></td>
-    <td>✖️</td>
-  </tr>
-  <tr class="center">
-    <td class="left">Jest</td>
-    <td>🏎</td>
-    <td>✖️</td>
-    <td>✖️</td>
-    <td>✖️<br></td>
-    <td>✅</td>
-    <td>✖️</td>
-  </tr>
-</table>
+<div class="table-wrapper">
+  <div class="table-scroller">
+    <table class="comparison-table">
+      <thead>
+        <tr class="table-header center">
+          <th class="sticky-col">Test Framework</th>
+          <th>Fast</th>
+          <th>Cross Browser</th>
+          <th>Cross Device</th>
+          <th>Cross Test Runner</th>
+          <th>Cross Framework</th>
+          <th>Built for Components</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="center">
+          <td class="left sticky-col">BigTest</td>
+          <td>🏎</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr class="center">
+          <td class="left sticky-col">Cypress</td>
+          <td>🚗</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅<br></td>
+          <td>❌</td>
+        </tr>
+        <tr class="center">
+          <td class="left sticky-col">Selenium</td>
+          <td>🚌</td>
+          <td>✅<br></td>
+          <td>❌</td>
+          <td>✅<br></td>
+          <td>✅<br></td>
+          <td>❌</td>
+        </tr>
+        <tr class="center">
+          <td class="left sticky-col">Jest</td>
+          <td>🏎</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌<br></td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 Most of the existing frameworks check a few of those boxes (or
 partially check them), but not all of them. With mobile browsing being
-so prevalent in todays world we needed something that could easily run
+so prevalent in today's world we needed something that could easily run
 tests on any device we had on hand (by visiting a URL). So, we decided
 to build what we wanted to see in the ecosystem!
 
 
 ## Testing philosophy
-
-[TODO, maybe this isn't the proper heading?]
 
 When writing tests with BigTest it's important to write tests like a
 user will be using your app. When a person is interacting with your
@@ -123,39 +129,43 @@ too: send browser events and assert that there was feedback.
 
 If you have tests where you reach into a components or
 controllers state, that's not a proper BigTest. All interactions
-should come from userland.
+should come from userland. Another thing to keep an eye for is to make
+sure you're asserting against a state in the application the users
+_sees_ or interacts with. The goal is to make an interaction and
+observe the proper change on the page has happened as a result of that
+interaction.
 
-## How does it work?
+## How does BigTest work?
 
 BigTest mounts and renders your application into the browser. Then the
 tests you have written will be executed. Interactor drives
-the the application around, which is right there inside of the
-browser with the tests and the rendered application. This is the key
-difference between BigTest and other testing frameworks. BigTest
-doesn't have a seperate process that controls the browser, which is
-why you can just visit a URL and the tests will run.
+the application around, which is right there inside of the
+browser with the tests and rendered application. This is the key
+difference between BigTest and other testing frameworks, BigTest
+doesn't have a separate process that controls the browser. Which is
+why you can just visit a URL and your BigTests will run.
 
-At a high level BigTest:
+At a high-level BigTest:
 
 - Starts your applications server (which bundles the tests & app)
 - Launches the browser(s)
 - Starts running the test runner
-- Interactor drives the application around (click this, visit that
+- Interactor drives the application around (click this, visit a
   route, etc)
 - Results are reported back to the CLI
 
 
-## Packages that make up BigTest
+## Packages that makeup BigTest
 
-The BigTest framework is comprised of a few small packages that can be
-used invidually too. It's helpful to know of these packages and what
-their role is in the BigTest framework.
+The BigTest framework is comprised of a few small packages that can
+also be used individually. It's helpful to know of these packages
+and what their role is in the BigTest framework.
 
 ### Convergence
 
 [Convergences](/docs/convergence/) are powerful, immutable, reusable,
-and composable assertions that allow you to know immediately when a
-desired state is achieved. Put in simple terms: it checks the DOM
+and composable assertions that allow you to know immediately when
+the desired state is achieved. Put in simple terms: it checks the DOM
 every 10ms (for 2s by default) to see if the state you're checking for
 is there.
 
@@ -172,31 +182,37 @@ interactors as composable page objects for modern components.
 
 Interactors are the heart and soul of BigTest. In simple terms,
 we render the application into the browser and interactors _drive_ the
-application around. They use covergences to make sure the element
-exits and can be interacted with before performing the interaction you
+application around. They use convergences to make sure the element
+exists and can be interacted with before performing the interaction you
 want.
 
-Interactors also match the composibility you get with modern
-componets. This means you can compose your tests in a similar way you
+Interactors also match the composability you get with modern
+components. This means you can compose your tests in a similar way you
 compose your UI.
 
+To learn more about interactors be sure to look at the [interactor
+guides.](/guides/interactors/introduction)
 
 ### CLI
 
 The [BigTest CLI](https://github.com/bigtestjs/cli) aims to make
-setting up acceptance testing in SPAs easy. Things like setup, build
-tool integration, and browser launching simple.
+setting up acceptance testing in SPAs easy (like setup, build
+tool integration, and browser launching)
 
 You can think of the CLI as a [Karma](https://karma-runner.github.io/2.0/index.html) or
-[Testem](https://github.com/testem/testem) but easier to setup and
-contains other helful CLI commands to work with the BigTest framework
+[Testem](https://github.com/testem/testem) but easier to set up and
+contains other helpful CLI commands to work with the BigTest framework
 (like `bigtest init`).
 
 **Without using the CLI**
 
 Interactors and convergences can be used without BigTest CLI. The
-trade off is you will need to bring your own browser launcher
+tradeoff is you will need to bring your own browser launcher
 (like [Karma](https://karma-runner.github.io/2.0/index.html) or
 [Testem](https://github.com/testem/testem)). If your application is
 already running tests in the browser with Karma/testem, you can easily plug
 convergence/interactor into your existing setup.
+
+[Checkout the examples GitHub
+repo](https://github.com/bigtestjs/examples) to see the different ways to get
+going with BigTest.

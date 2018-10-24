@@ -1,22 +1,33 @@
-$table-border: 1px solid #ddd;
+.table-wrapper {
+  position: relative;
+}
 
 .comparison-table {
-  border: $table-border;
   margin-bottom: 1rem;
+  width: calc(145px * 6);
+  position: initial; // due to everything being set to `relative`
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
 
-  tr {
-    border-bottom: $table-border;
+  tr:nth-child(2n+2),
+  tr:nth-child(2n+2) td {
+    background-color: $color-primary-lighter;
   }
 
-  td {
-    border-right: $table-border;
-    padding: 4px;
+  thead th {
+    background-color: $color-primary-light;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    width: 145px;
   }
 
-  .table-header td {
-    font-weight: 700;
-    padding-right: 6px;
-    background-color: white;
+  tbody td {
+    padding: 10px;
+    white-space: nowrap;
+    width: 145px;
   }
 
   .right {
@@ -29,5 +40,26 @@ $table-border: 1px solid #ddd;
 
   .left {
     text-align: left;
+  }
+}
+
+.table-scroller {
+  position: initial;
+  margin-left: 145px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 5px;
+  width: calc(100% - 145px);
+}
+
+.sticky-col {
+  border-right: 2px solid $color-secondary;
+  position: absolute;
+  left: 0;
+  top: auto;
+  width: 145px;
+
+  &:first-child {
+    border-right: 2px solid $color-secondary;
   }
 }

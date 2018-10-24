@@ -93,22 +93,22 @@ export async function setupApplicationForTesting() {
 
 ## Launch and Serve
 
-BigTest works by bundling your app with the tests files that you've
-written. So, any tests that are created will need to be imported to
+BigTest works by bundling your app with the test files that you have
+written. Any tests that are created will need to be imported to
 `bigtest/index.js`.
 You need to tell your bundler how to bundle the tests with the app by
 changing your bundler's entry point to `bigtest/index.js`.
 
 The `bigtest` CLI sets the `NODE_ENV` to `test` for you. So with
-webpack you can check to the `NOD_ENV` and change the entry point as
+webpack you can check to the `NODE_ENV` and change the entry point as
 needed:
 
 ```javascript
 // webpack.config.js
-let isTesting = process.env.NODE_ENV === 'test'
+let isTesting = process.env.NODE_ENV === 'test';
 
 module.exports = {
-  entry: isTesting ? ".bigtest/index.js" : "./src/index.js"
+  entry: isTesting ? '.bigtest/index.js' : './src/index.js'
 };
 ```
 
