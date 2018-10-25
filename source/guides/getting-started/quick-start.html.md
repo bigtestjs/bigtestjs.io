@@ -34,7 +34,7 @@ technologies:
 
 ## Installing Dependencies
 
-First, install the packages you'll to need to bigtest:
+First, install the packages you'll to need to BigTest:
 
 ```bash
  yarn add --dev @bigtest/cli @bigtest/interactor @bigtest/react
@@ -99,12 +99,12 @@ written. Any tests that are created will need to be imported to
 You need to tell your bundler how to bundle the tests with the app by
 changing your bundler's entry point to `bigtest/index.js`.
 
-The `bigtest` CLI sets the `NODE_ENV` to `test` for you. So with
-webpack you can check to the `NODE_ENV` and change the entry point as
-needed:
+The `bigtest` CLI sets the `NODE_ENV` to `test` for you. With Webpack
+for example, you can check to see if the `NODE_ENV` is equal to
+`test` and change the entry point as needed:
 
 ```javascript
-// webpack.config.js
+// in your webpack.config.js
 let isTesting = process.env.NODE_ENV === 'test';
 
 module.exports = {
@@ -114,8 +114,8 @@ module.exports = {
 
 ### `bigtest run`
 
-`bigtest run` handles launching the different browsers and actually
-running the tests. Add a test script to your `package.json`
+`bigtest run` handles launching different browsers and actually
+running the tests. Add a script to your `package.json`:
 
 ```javascript
 // ..
@@ -123,6 +123,9 @@ running the tests. Add a test script to your `package.json`
   "test": "bigtest run"
 }
 ```
+
+This is so we're using the projects version of `@bigtest/cli` that is
+specified in the `package.json` and not a global install.
 
 ### `bigtest.opts`
 
@@ -132,7 +135,7 @@ The `bigtest.opts` file lets the launcher (`bigtest run`) know:
 - Where your app is served (**`--serve-url`**)
 - What test framework you're using (**`--adapter`**)
   - The bigtest launcher currently only works with mocha, but we are
-working on adding more adapters.
+working on [adding more adapters.](https://github.com/bigtestjs/cli/issues?q=is%3Aissue+is%3Aopen+label%3Aadapter)
 
 Your `bigtest.opts` should look something like this:
 
@@ -144,14 +147,14 @@ Your `bigtest.opts` should look something like this:
 
 ## Run the tests!
 
-Now that everything is setup, if your applications root url has an
-`h1` tag (it should!), you will have a passing test. You can check by
+Now that everything is setup, if your applications root URL has an
+`h1` element (it should!), you will have a passing test. You can check by
 running the test command we setup earlier:
 
 ```bash
 yarn test
 ```
 
-That look like this:
+It should look something like this:
 
 ![Gif of BigTest running](https://i.imgur.com/1yBTPgC.gif)

@@ -43,7 +43,7 @@ We had a few requirements when setting out to find a testing tool
 that would be ideal for SPAs:
 
 - Fast 🏎
-- Built with components in mind
+- Built with components in mind (composable)
 - Cross-browser (Firefox, IE, Safari, etc)
 - Cross-device (Windows, macOS, iOS, Android, etc)
 - Cross-framework (React, Vue, Ember, Angular, etc)
@@ -121,20 +121,22 @@ to build what we wanted to see in the ecosystem!
 
 ## Testing philosophy
 
-When writing tests with BigTest it's important to write tests like a
+When writing tests with BigTest it's important to write them like a
 user will be using your app. When a person is interacting with your
 app, they’re using their mouse and keyboard which is translating to
 browser events that your app responds to. They’re clicking things and
 expecting to achieve results. This is what our app’s tests should do
-too: send browser events and assert that there was feedback.
+too: send browser events and assert that there was feedback. We all
+know cross-browser bugs exist!
 
 If you have tests where you reach into a components or
 controllers state, that's not a proper BigTest. All interactions
 should come from userland. Another thing to keep an eye for is to make
 sure you're asserting against a state in the application the users
-_sees_ or interacts with. The goal is to make an interaction and
-observe the proper change on the page has happened as a result of that
-interaction.
+_sees_ or _interacts_ with.
+
+The goal is to make an interaction and observe the proper change on
+the page has happened as a result of that interaction.
 
 ## How does BigTest work?
 
