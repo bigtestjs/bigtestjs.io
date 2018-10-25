@@ -137,6 +137,11 @@ The `bigtest.opts` file lets the launcher (`bigtest run`) know:
   - The bigtest launcher currently only works with mocha, but we are
 working on [adding more adapters.](https://github.com/bigtestjs/cli/issues?q=is%3Aissue+is%3Aopen+label%3Aadapter)
 
+The `bigtest.opts` file is a configuration file for the different
+options you can pass as flags to the BigTest CLI. Arguments passed
+from the CLI take precedence over what is specified in the `opts`
+file.
+
 Your `bigtest.opts` should look something like this:
 
 ```javascript
