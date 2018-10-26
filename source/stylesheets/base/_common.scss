@@ -31,6 +31,12 @@ button {
   font: inherit;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto $space-small;
+}
+
 .visually-hidden {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;

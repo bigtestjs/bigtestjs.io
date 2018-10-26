@@ -61,6 +61,10 @@ ul {
   padding-left: $space-small;
 }
 
+li > ul {
+  margin-bottom: 0;
+}
+
 a {
   color: $color-tertiary-light;
   text-decoration: none;
