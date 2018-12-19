@@ -61,6 +61,14 @@ jobs:
           name: Build
           command: bundle exec rake assets:precompile
       - *persist_workspace
+  test:
+    <<: *defaults
+    steps:
+      - *attach_workspace
+      - run:
+          name: Test
+          command: bundle exec percy snapshot build/
+      - *persist_workspace
 
 workflows:
   version: 2
@@ -69,4 +77,8 @@ workflows:
       - install
       - build:
           requires:
+            - install
+      - test:
+          requires:
+            - build
             - install
