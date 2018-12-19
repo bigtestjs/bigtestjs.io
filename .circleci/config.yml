@@ -67,7 +67,7 @@ jobs:
       - *attach_workspace
       - run:
           name: Test
-          command: bundle exec percy snapshot build/
+          command: bundle exec percy snapshot build/ --enable_javascript
       - *persist_workspace
 
 workflows:
