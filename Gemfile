@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'puma'
 gem 'rack-contrib'
 gem 'rack-ssl'
+gem "rack", ">= 2.0.6"
 gem 'rake'
 
 gem 'kramdown'
