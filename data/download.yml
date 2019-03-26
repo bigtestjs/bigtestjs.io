@@ -1,0 +1,16 @@
+packages:
+  - name: "@bigtest/interactor"
+    github: https://github.com/bigtestjs/interactor/archive/master.zip
+    npm: https://www.npmjs.com/package/@bigtest/interactor
+
+  - name: "@bigtest/react"
+    github: https://github.com/bigtestjs/react/archive/master.zip
+    npm: https://www.npmjs.com/package/@bigtest/react
+
+  - name: "@bigtest/cli"
+    github: https://github.com/bigtestjs/cli/archive/master.zip
+    npm: https://www.npmjs.com/package/@bigtest/cli
+
+  - name: "@bigtest/mirage"
+    github: https://github.com/bigtestjs/mirage/archive/master.zip
+    npm: https://www.npmjs.com/package/@bigtest/mirage
