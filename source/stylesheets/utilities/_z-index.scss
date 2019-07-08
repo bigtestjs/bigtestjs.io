@@ -1,8 +1,0 @@
-$z-index: (
-  navigation         : 100,
-  footer             : 90
-);
-
-@function z($key) {
-  @return map-get($z-index, $key);
-}

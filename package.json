@@ -1,24 +1,38 @@
 {
-  "name": "bigtest.js.org",
+  "name": "bigtest.js.io",
   "private": true,
-  "scripts": {
-    "build": "webpack --env.production --bail -p",
-    "start": "webpack --env.development --watch -d"
+  "version": "0.1.0",
+  "dependencies": {
+    "gatsby": "^2.13.9",
+    "gatsby-image": "^2.2.4",
+    "gatsby-plugin-manifest": "^2.2.1",
+    "gatsby-plugin-offline": "^2.2.1",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-sharp": "^2.2.3",
+    "gatsby-source-filesystem": "^2.1.2",
+    "gatsby-transformer-sharp": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.0",
-    "@babel/preset-env": "^7.0.0-beta.0",
-    "@babel/preset-stage-3": "^7.0.0-beta.0",
-    "@bigtest/convergence": "latest",
-    "@bigtest/interactor": "^0.9.0",
-    "@bigtest/react": "latest",
-    "babel-loader": "^8.0.0-beta.2",
-    "css-loader": "^0.28.11",
-    "highlight.js": "^9.12.0",
-    "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.8.3",
-    "sass-loader": "^7.0.1",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "prettier": "^1.18.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigtestjs/bigtestjs.io"
+  },
+  "bugs": {
+    "url": "https://github.com/bigtestjs/bigtestjs.io/issues"
   }
 }
