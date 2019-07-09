@@ -79,39 +79,39 @@ const IntroductionPage = () => (
           <tbody>
             <tr className="center">
               <td className="left sticky-col">BigTest</td>
-              <td>🏎</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
+              <td><span role="img" aria-label="">🏎</span></td>
+              <td><span role="img" aria-label="">✅</span></td>
+              <td><span role="img" aria-label="">✅</span></td>
+              <td><span role="img" aria-label="">✅</span></td>
+              <td><span role="img" aria-label="">✅</span></td>
+              <td><span role="img" aria-label="">✅</span></td>
             </tr>
             <tr className="center">
               <td className="left sticky-col">Cypress</td>
-              <td>🚗</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✅<br /></td>
-              <td>❌</td>
+              <td><span role="img" aria-label="">🚗</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">✅</span><br /></td>
+              <td><span role="img" aria-label="">❌</span></td>
             </tr>
             <tr className="center">
               <td className="left sticky-col">Selenium</td>
-              <td>🚌</td>
-              <td>✅<br /></td>
-              <td>❌</td>
-              <td>✅<br /></td>
-              <td>✅<br /></td>
-              <td>❌</td>
+              <td><span role="img" aria-label="">🚌</span></td>
+              <td><span role="img" aria-label="">✅</span><br /></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">✅</span><br /></td>
+              <td><span role="img" aria-label="">✅</span><br /></td>
+              <td><span role="img" aria-label="">❌</span></td>
             </tr>
             <tr className="center">
               <td className="left sticky-col">Jest</td>
-              <td>🏎</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌<br /></td>
-              <td>✅</td>
-              <td>❌</td>
+              <td><span role="img" aria-label="">🏎</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
+              <td><span role="img" aria-label="">❌</span><br /></td>
+              <td><span role="img" aria-label="">✅</span></td>
+              <td><span role="img" aria-label="">❌</span></td>
             </tr>
           </tbody>
         </table>

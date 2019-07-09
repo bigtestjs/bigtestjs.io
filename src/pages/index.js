@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -50,12 +49,12 @@ const IndexPage = () => (
 
       <ul className="home-users-list">
         <li>
-          <a href="https://frontside.io" target="_blank">
+          <a href="https://frontside.io" target="_blank" rel="noopener noreferrer">
             <img src="/images/users/frontside-bca0ad03.svg" alt="The Frontside" />
           </a>
         </li>
         <li>
-          <a href="https://folio.org" target="_blank">
+          <a href="https://folio.org" target="_blank" rel="noopener noreferrer">
             <img src="/images/users/folio-f719604e.png" alt="FOLIO" />
           </a>
         </li>

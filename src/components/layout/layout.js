@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -35,9 +36,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © 2017 - {new Date().getFullYear()} The Frontside, Inc.
-        </footer>
+        <Footer></Footer>
       </div>
     </>
   )
