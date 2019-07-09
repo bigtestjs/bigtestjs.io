@@ -1,7 +1,7 @@
 .footer {
-  background-color: --color-primary;
+  background-color: var(--color-primary);
   color: white;
-  padding: --space-small 0;
+  padding: var(--space-small) 0;
   text-align: center;
 
   a {
@@ -12,11 +12,11 @@
 
   &-logo {
     display: inline-block;
-    margin-bottom: --space-xxs;
+    margin-bottom: var(--space-xxs);
 
     img {
       display: block;
-      height: --space-medium;
+      height: var(--space-medium);
     }
   }
 
@@ -24,11 +24,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: --space-xs;
+    margin-bottom: var(--space-xs);
   }
 
   &-copyright {
-    font-size: --size-xs;
+    font-size: var(--size-xs);
     text-align: center;
   }
 
@@ -37,15 +37,15 @@
     --logo-overlap: 4.5rem;
 
     text-align: left;
-    padding: --space-med-sm 0 --space-small;
+    padding: var(--space-med-sm) 0 var(--space-small);
 
     h5 {
-      margin: --space-small 0 --space-xxs;
+      margin: var(--space-small) 0 -var(-space-xxs);
     }
 
     &-logo {
-      margin-top: ---space-xxs;
-      margin-left: ---logo-overlap;
+      margin-top: var(--space-xxs);
+      margin-left: var(--logo-overlap);
       margin-bottom: 0;
     }
 
@@ -53,14 +53,14 @@
       flex-direction: row;
       align-items: start;
       justify-content: space-between;
-      padding: 0 --logo-overlap;
-      margin: 0 auto --space-medium;
+      padding: 0 var(--logo-overlap);
+      margin: 0 auto var(--space-medium);
       max-width: 78rem;
     }
 
     &-sitemap-section {
       align-items: start;
-      padding: 0 --space-small;
+      padding: 0 var(--space-small);
       width: 25%;
     }
   }
