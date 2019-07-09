@@ -5,7 +5,18 @@ module.exports = {
     author: `@thefrontside`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require("autoprefixer"),
+          require("precss"),
+          require("postcss-color-function"),
+          require("postcss-calc")
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -28,7 +28,7 @@ const IntroductionPage = () => (
     DeLuca</a> gave a talk at Byteconf
     introducing BigTest:</p>
 
-    <div class="responsive-video">
+    <div className="responsive-video">
       <iframe width="560" height="315"
       src="https://www.youtube.com/embed/w8a7Km9b6UI?start=107"
       frameborder="0" allow="autoplay; encrypted-media"
@@ -62,12 +62,12 @@ const IntroductionPage = () => (
     webdriver</a>) and
     wasn't written with components in mind.</p>
 
-    <div class="table-wrapper">
-      <div class="table-scroller">
-        <table class="comparison-table">
+    <div className="table-wrapper">
+      <div className="table-scroller">
+        <table className="comparison-table">
           <thead>
-            <tr class="table-header center">
-              <th class="sticky-col">Test Framework</th>
+            <tr className="table-header center">
+              <th className="sticky-col">Test Framework</th>
               <th>Fast</th>
               <th>Cross Browser</th>
               <th>Cross Device</th>
@@ -77,8 +77,8 @@ const IntroductionPage = () => (
             </tr>
           </thead>
           <tbody>
-            <tr class="center">
-              <td class="left sticky-col">BigTest</td>
+            <tr className="center">
+              <td className="left sticky-col">BigTest</td>
               <td>🏎</td>
               <td>✅</td>
               <td>✅</td>
@@ -86,8 +86,8 @@ const IntroductionPage = () => (
               <td>✅</td>
               <td>✅</td>
             </tr>
-            <tr class="center">
-              <td class="left sticky-col">Cypress</td>
+            <tr className="center">
+              <td className="left sticky-col">Cypress</td>
               <td>🚗</td>
               <td>❌</td>
               <td>❌</td>
@@ -95,8 +95,8 @@ const IntroductionPage = () => (
               <td>✅<br /></td>
               <td>❌</td>
             </tr>
-            <tr class="center">
-              <td class="left sticky-col">Selenium</td>
+            <tr className="center">
+              <td className="left sticky-col">Selenium</td>
               <td>🚌</td>
               <td>✅<br /></td>
               <td>❌</td>
@@ -104,8 +104,8 @@ const IntroductionPage = () => (
               <td>✅<br /></td>
               <td>❌</td>
             </tr>
-            <tr class="center">
-              <td class="left sticky-col">Jest</td>
+            <tr className="center">
+              <td className="left sticky-col">Jest</td>
               <td>🏎</td>
               <td>❌</td>
               <td>❌</td>

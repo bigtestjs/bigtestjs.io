@@ -1,0 +1,11 @@
+@import '../variables';
+
+.header {
+  background-color: $color-primary;
+  box-shadow: $shadow-large;
+  height: $space-medium;
+  padding: 0 0.5rem;
+  z-index: z(navigation);
+  position: fixed;
+  width: 100%;
+}
