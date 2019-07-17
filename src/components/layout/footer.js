@@ -1,13 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
 import "./footer.css"
+import footerLogo from '../../images/logo-white.svg';
 
 const Header = () => (
   <footer className="footer">
     <section className="footer-sitemap">
       <div className="footer-sitemap-section">
         <a href="/" className="footer-logo">
-          <img src="/images/logo-white.svg" alt="BigTest" />
+          <img src={footerLogo} alt="BigTest" />
         </a>
 
         <Link to='/guides'>Guides</Link>

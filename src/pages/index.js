@@ -3,13 +3,17 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "./index.css"
+import logo from '../images/logo.svg';
+import logoFrontside from '../images/users/frontside.svg';
+import logoFolio from '../images/users/folio.png';
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
+    <SEO title="" />
     <section className="home-section home-hero">
       <h1 className="home-hero-logo">
-        <img src="/images/logo-e73367a1.svg" alt="BigTest" />
+        <img src={logo} alt="BigTest" />
       </h1>
 
       <h2 className="home-hero-tagline">
@@ -50,12 +54,12 @@ const IndexPage = () => (
       <ul className="home-users-list">
         <li>
           <a href="https://frontside.io" target="_blank" rel="noopener noreferrer">
-            <img src="/images/users/frontside-bca0ad03.svg" alt="The Frontside" />
+            <img src={logoFrontside} alt="Frontside" />
           </a>
         </li>
         <li>
           <a href="https://folio.org" target="_blank" rel="noopener noreferrer">
-            <img src="/images/users/folio-f719604e.png" alt="FOLIO" />
+            <img src={logoFolio} alt="FOLIO" />
           </a>
         </li>
       </ul>
