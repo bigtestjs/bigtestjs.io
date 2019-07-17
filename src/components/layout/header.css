@@ -1,11 +1,11 @@
-@import '../variables';
+@import '../../styles/variables';
 
 .header {
   background-color: var(--color-primary);
   box-shadow: var(--shadow-large);
   height: var(--space-medium);
   padding: 0 0.5rem;
-  /* z-index: z(navigation); */
+  z-index: z(navigation);
   position: fixed;
   width: 100%;
 

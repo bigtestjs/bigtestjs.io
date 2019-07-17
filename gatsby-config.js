@@ -13,7 +13,36 @@ module.exports = {
           require("autoprefixer"),
           require("precss"),
           require("postcss-color-function"),
-          require("postcss-calc")
+          require("postcss-calc"),
+          require("postcss-functions")({
+            functions: {
+              z(layer) {
+                /*
+                  Single source-of-truth for custom z-indices.
+                  If a z-index is needed on an element, define a string here that describes it
+                  and place in the appropriate order.
+
+                  Layers are ordered top to bottom.
+
+                  To use in CSS:
+                  .myComponent {
+                    z-index: z('myComponentLayerString');
+                  }
+
+                  Elements shouldn't share a layer string, because there should always be an explicit
+                  z priority between two elements. Stick to one usage per string.
+
+                */
+                const layers = [
+                  'footer',
+                  'navigation'
+                ];
+
+                const layerIndex = layers.indexOf(layer.replace(/^'(.*)'$/, '$1'));
+                return (layerIndex > -1) ? (layers.length - layerIndex) : '1';
+              }
+            }
+          })
         ]
       }
     },
