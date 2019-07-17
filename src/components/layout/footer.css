@@ -43,13 +43,13 @@
       margin: var(--space-small) 0 -var(-space-xxs);
     }
 
-    &-logo {
-      margin-top: var(--space-xxs);
-      margin-left: var(--logo-overlap);
+    .footer-logo {
+      margin-top: calc(var(--space-xxs) * -1);
+      margin-left: calc(var(--logo-overlap) * -1);
       margin-bottom: 0;
     }
 
-    &-sitemap {
+    .footer-sitemap {
       flex-direction: row;
       align-items: start;
       justify-content: space-between;
@@ -58,7 +58,7 @@
       max-width: 78rem;
     }
 
-    &-sitemap-section {
+    .footer-sitemap-section {
       align-items: start;
       padding: 0 var(--space-small);
       width: 25%;
