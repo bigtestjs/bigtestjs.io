@@ -40,7 +40,7 @@
     padding-bottom: var(--space-xl);
   }
 
-  &-logo {
+  .home-hero-logo {
     border-bottom: none;
     margin-bottom: var(--space-med-sm);
     max-width: 40rem;
@@ -52,7 +52,7 @@
     }
   }
 
-  &-tagline {
+  .home-hero-tagline {
     text-align: center;
     font-size: var(--size-med-lg);
     font-weight: 400;
@@ -74,7 +74,7 @@
     }
   }
 
-  &-cta {
+  .home-hero-cta {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,7 +89,7 @@
 .home-intro {
   background: var(--color-secondary-light);
 
-  &-buckets {
+  .home-intro-buckets {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,7 +123,7 @@
 .home-users {
   background: var(--color-gray);
 
-  &-list {
+  .home-users-list {
     display: flex;
     flex-direction: column;
     align-items: center;

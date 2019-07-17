@@ -10,7 +10,7 @@
   flex-grow: 1;
   padding: var(--space-medium) 0;
 
-  &-content {
+  .main-content {
     padding: var(--space-xs);
     max-width: 60rem;
     width: 100%;

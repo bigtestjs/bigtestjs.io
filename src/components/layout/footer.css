@@ -10,7 +10,7 @@
     line-height: 1.5;
   }
 
-  &-logo {
+  .footer-logo {
     display: inline-block;
     margin-bottom: var(--space-xxs);
 
@@ -20,14 +20,14 @@
     }
   }
 
-  &-sitemap, &-sitemap-section {
+  .footer-sitemap, .footer-sitemap-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: var(--space-xs);
   }
 
-  &-copyright {
+  .footer-copyright {
     font-size: var(--size-xs);
     text-align: center;
   }
