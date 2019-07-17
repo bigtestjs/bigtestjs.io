@@ -52,8 +52,7 @@
     }
   }
 
-  /* added specificity to counter `.home-section h2` */
-  & &-tagline {
+  &-tagline {
     text-align: center;
     font-size: var(--size-med-lg);
     font-weight: 400;

@@ -1,98 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i');
 @import '../../styles/variables';
 
-/* Default document styles */
-html {
-  font: 100%/1.8 var(--font-sans-serif);
-  background: var(--body-bg);
-  color: var(--body-color);
-}
+@import '../../styles/reset';
+@import '../../styles/common';
+@import '../../styles/typography';
 
-/* Reset */
-*, *::before, *::after {
-  box-sizing: border-box;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
+.main {
+  background-color: white;
+  flex-grow: 1;
+  padding: var(--space-medium) 0;
 
-input, button {
-  appearance: none;
-  border: none;
-  font: inherit;
-  background: none;
-}
+  &-content {
+    padding: var(--space-xs);
+    max-width: 60rem;
+    width: 100%;
 
-img {
-  max-width: 100%;
-}
+    @media (--media-medium-up) {
+      padding: var(--space-small);
+    }
 
-/* required for picture element */
-picture {
-  position: initial;
-}
+    @media (--media-med-lg-up) {
+      padding-top: var(--space-med-sm);
+      width: calc(100% - 18rem);
+    }
+  }
 
-/* Typography */
-h1, h2, h3 {
-  line-height: 1.375;
-  font-family: var(--font-sans-serif);
-  font-weight: 800;
-  letter-spacing: 0.025em;
-}
+  &.index {
+    padding-bottom: 0;
+  }
 
-h1 {
-  font-size: var(--size-xl);
-  margin-bottom: var(--space-one-half);
-  margin-top: var(--space-double);
-}
+  @media (--media-medium-up) {
+    padding-bottom: var(--space-med-lg);
+  }
 
-h2 {
-  font-size: var(--size-large);
-  margin-bottom: var(--space-single);
-  margin-top: var(--space-quadruple);
-}
+  @media (--media-med-lg-up) {
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--space-large);
 
-h3 {
-  font-size: var(--size-med-lg);
-  margin-bottom: var(--space-single);
-  margin-top: var(--space-quadruple);
-  font-weight: 700;
-}
-
-p {
-  font-family: var(--font-serif);
-  font-size: var(--size-base);
-  margin-bottom: var(--space-one-half);
-  color: var(--body-color);
-}
-
-a {
-  color: var(--link-color);
-}
-
-ol {
-  font-family: var(--font-serif);
-  font-size: var(--size-base);
-  margin: var(--space-double);
-}
-
-/* Utility Classes */
-.align-center {
-  text-align: center;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+    &.index {
+      display: block;
+    }
+  }
 }
