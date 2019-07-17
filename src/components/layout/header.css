@@ -28,7 +28,7 @@
     @media screen and (min-width: 34rem) {
       background-image: url('/images/logo-white.svg');
       /* magic number: 2.8 is the logo's ratio */
-      width: var(--space-medium) * 2.8;
+      width: calc(var(--space-medium) * 2.8);
     }
   }
 

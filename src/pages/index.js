@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Does my application work in real life?" />
+    <SEO />
     <section className="home-section home-hero">
       <h1 className="home-hero-logo">
         <img src="/images/logo-e73367a1.svg" alt="BigTest" />
