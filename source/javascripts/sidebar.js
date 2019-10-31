@@ -92,6 +92,8 @@ export default class SidebarComponent {
 
   constructor($root) {
     this.$root = $root;
+    this.$sidebarNav = $root.querySelector('.sidebar-nav');
+
 
     // the sidebar itself is a collapsable item when mobile
     this.nav = new SidebarItemComponent($root.firstElementChild);
@@ -103,6 +105,10 @@ export default class SidebarComponent {
 
     // on window resize, the nav toggle might need to be reset
     window.addEventListener('resize', this.handleResize.bind(this));
+
+    // on window scroll, the sidebar nav might need to  change height for oveflown content
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+    
   }
 
   // smaller screens can toggle the sidebar
@@ -127,5 +133,14 @@ export default class SidebarComponent {
 
     // remember last togglable state
     this.wasTogglable = this.isTogglable;
+  }
+
+  handleScroll(){
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight-500) {
+      this.$sidebarNav.classList.add("sidebar-nav--scrolledToBottom");
+    }
+    else if(this.$sidebarNav.classList.contains('sidebar-nav--scrolledToBottom')){
+      this.$sidebarNav.classList.remove("sidebar-nav--scrolledToBottom");
+    }
   }
 }

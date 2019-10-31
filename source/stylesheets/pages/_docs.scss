@@ -1,6 +1,10 @@
-.docs:not(.docs_index) {
-  h1 {
-    border-bottom: 0;
+.docs {
     padding-bottom: 0;
+
+  &:not(.docs_index) {
+    h1 {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 }
