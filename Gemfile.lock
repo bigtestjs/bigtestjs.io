@@ -108,7 +108,7 @@ GEM
       faraday (>= 0.9)
     public_suffix (3.0.2)
     puma (3.11.4)
-    rack (2.0.6)
+    rack (2.0.8)
     rack-contrib (2.0.1)
       rack (~> 2.0)
     rack-livereload (0.3.17)
