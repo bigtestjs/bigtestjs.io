@@ -1,15 +1,6 @@
 .sidebar {
   $border: 1px solid $color-primary-light;
-  padding: $space-xs;
   min-width: 18rem;
-
-  @media #{$media-medium-up} {
-    padding: $space-small;
-  }
-
-  @media #{$media-med-lg-up} {
-    padding-top: $space-med-sm;
-  }
 
   &-heading {
     display: block;
@@ -38,7 +29,7 @@
       border: 0.3rem solid transparent;
       border-bottom: 0.4rem solid currentcolor;
       border-top: none;
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 50%;
@@ -68,8 +59,25 @@
     text-decoration: none;
   }
 
+  &-nav {
+    @media #{$media-med-lg-up} {
+      width: 100%;
+      overflow-y: scroll;
+      transition: all 0.7s;
+      z-index: 0;
+      height: 90vh;
+      width: initial;
+      position: fixed;
+      margin-bottom: 100px;
+
+      &--scrolledToBottom {
+        height: 47vh;
+      }
+    }
+  }
+
   &-nav > &-list > &-item.is-active > a::after {
-    content: '';
+    content: "";
     border-radius: 50%;
     background: $color-primary;
     width: $space-xxs;
