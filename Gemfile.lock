@@ -17,7 +17,7 @@ GEM
     coffee-script-source (1.12.2)
     commander (4.5.0)
       highline (~> 2.0.0)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     contracts (0.13.0)
     dotenv (2.7.5)
     em-websocket (0.5.1)
