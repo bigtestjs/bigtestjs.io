@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --env.production --bail -p",
-    "start": "webpack --env.development --watch -d"
+    "start": "webpack --env.development --watch -d",
+    "develop": "bundle exec middleman server"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.0",
