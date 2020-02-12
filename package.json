@@ -3,12 +3,16 @@
   "private": true,
   "scripts": {
     "build": "webpack --env.production --bail -p",
-    "start": "webpack --env.development --watch -d"
+    "start": "webpack --env.development --watch -d",
+    "develop": "bundle exec middleman server"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0-beta.0",
-    "@babel/preset-stage-3": "^7.0.0-beta.0",
     "@bigtest/convergence": "latest",
     "@bigtest/interactor": "^0.9.0",
     "@bigtest/react": "latest",
@@ -18,7 +22,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

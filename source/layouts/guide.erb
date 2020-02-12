@@ -8,6 +8,9 @@
   } %>
 
   <article class="main-content">
+
+    <%= partial 'partials/deprecated' %>
+
     <%= yield %>
 
     <% if has_prev_guide || has_next_guide %>
