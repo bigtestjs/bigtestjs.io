@@ -1,7 +1,8 @@
-# https://bigtestjs.io
+# Archived site
+## https://v1.bigtestjs.io
 [![CircleCI](https://circleci.com/gh/bigtestjs/bigtestjs.io.svg?style=svg)](https://circleci.com/gh/bigtestjs/bigtestjs.io)
 
-This is the source code for the all new BigTest website
+This is the source code for the v1 BigTest website. The next version's website will share the repo with the [BigTest project](https://github.com/thefrontside/bigtest). 
 
 ### Prerequisites
 
