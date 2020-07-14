@@ -107,7 +107,7 @@ GEM
     public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
-    rack (2.0.8)
+    rack (2.1.4)
     rack-contrib (2.1.0)
       rack (~> 2.0)
     rack-livereload (0.3.17)
@@ -141,7 +141,7 @@ DEPENDENCIES
   middleman-livereload (~> 3.4)
   percy-cli
   puma
-  rack (= 2.0.8)
+  rack (= 2.1.4)
   rack-contrib
   rack-ssl
   rake
