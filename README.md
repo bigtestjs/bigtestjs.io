@@ -1,6 +1,7 @@
-# https://bigtestjs.io
-[![CircleCI](https://circleci.com/gh/bigtestjs/bigtestjs.io.svg?style=svg)](https://circleci.com/gh/bigtestjs/bigtestjs.io)
+# :warning: DEPRECATED :warning:
+In order to make BigTest development faster and friction free, we've consolidated all of our individual projects into a [single repository on the Frontside Organization](https://github.com/thefrontside/bigtest). We'd love to see you there!
 
+## https://bigtestjs.io
 This is the source code for the all new BigTest website
 
 ### Prerequisites
